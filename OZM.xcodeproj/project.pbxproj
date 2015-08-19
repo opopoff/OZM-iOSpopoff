@@ -11,7 +11,7 @@
 		4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5BB1B849880007C0632 /* ViewController.swift */; };
 		4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C01B849880007C0632 /* Images.xcassets */; };
 		4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C21B849880007C0632 /* LaunchScreen.xib */; };
-		4F1AA5D01B849880007C0632 /* OZMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5CF1B849880007C0632 /* OZMTests.swift */; };
+		4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5CF1B849880007C0632 /* HMACTests.swift */; };
 		4F1AA5DC1B84991A007C0632 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5DB1B84991A007C0632 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		4F1AA5C31B849880007C0632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4F1AA5C91B849880007C0632 /* OZMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OZMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5CE1B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F1AA5CF1B849880007C0632 /* OZMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OZMTests.swift; sourceTree = "<group>"; };
+		4F1AA5CF1B849880007C0632 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
 		4F1AA5DB1B84991A007C0632 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		4F1AA5E31B849CD2007C0632 /* OZM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OZM-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +100,7 @@
 		4F1AA5CC1B849880007C0632 /* OZMTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F1AA5CF1B849880007C0632 /* OZMTests.swift */,
+				4F1AA5CF1B849880007C0632 /* HMACTests.swift */,
 				4F1AA5CD1B849880007C0632 /* Supporting Files */,
 			);
 			path = OZMTests;
@@ -239,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1AA5D01B849880007C0632 /* OZMTests.swift in Sources */,
+				4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
