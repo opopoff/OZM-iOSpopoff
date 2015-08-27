@@ -12,8 +12,8 @@ public struct APIClient {
 
     private static func sign(
         request: NSMutableURLRequest,
-        userKey: String = "mtFxlt3JsW4D5wOl",
-        secretKey: String = "mu4C3KOi5zhqeMz7xAzkYT0lmrAeXy8JhMtEpd9ln6O7T8dN1aEm4lEY7xLtWqid") -> NSMutableURLRequest?
+        userKey: String,
+        secretKey: String) -> NSMutableURLRequest?
     {
         let timestamp = NSDate().timeIntervalSince1970
         if let
@@ -49,22 +49,33 @@ public struct APIClient {
                 options: nil,
                 error: &error
             )
-
             if let error = error {
                 reject(error)
             }
 
-            let registerUrl="/api/register/"
-
             var request = NSMutableURLRequest(
-                URL: NSURL(string: "http://debug.ozm.rocks:49124\(registerUrl)")!,
+                URL: NSURL(string: "\(APIConstants.baseUrl)\(APIConstants.registration)")!,
                 cachePolicy: .UseProtocolCachePolicy,
                 timeoutInterval: 10.0
             )
             request.HTTPMethod = "POST"
-            request.allHTTPHeaderFields = ["Content-Type": "application/json"]
+            request.allHTTPHeaderFields = APIConstants.defaultHeaders
             request.HTTPBody = postData
-            request = sign(request)!
+            if let
+                userKey = DefaultSecrets.userKey,
+                secret = DefaultSecrets.secretKey {
+                    request = sign(request, userKey: userKey, secretKey: secret)!
+            } else {
+                reject(
+                    NSError(
+                        domain: "com.ozm.api",
+                        code: -1,
+                        userInfo: [
+                            "description": "No default secrets found! 😱"
+                        ]
+                    )
+                )
+            }
 
             let session = NSURLSession.sharedSession()
             let dataTask = session.dataTaskWithRequest(request) { data, response, error in
@@ -83,7 +94,10 @@ public struct APIClient {
                                 reject(error)
                             }
                             if let json = json as? JSONDictionary {
-                                fulfill(RegistrationResult(data: json))
+                                let result = RegistrationResult(data: json)
+                                if result.save() {
+                                    fulfill(result)
+                                }
                             }
                         } else {
                             reject(

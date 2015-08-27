@@ -16,12 +16,13 @@
 		4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5E51B84F866007C0632 /* APIClient.swift */; };
 		4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */; };
 		4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */; };
-		4F7D18CC1B8EBDCB00C209B5 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D189A1B8EBDCB00C209B5 /* README.markdown */; };
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */; };
 		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
 		4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */; };
+		4F7D18DA1B8F034300C209B5 /* KeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */; };
+		4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18DB1B8F149500C209B5 /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +51,13 @@
 		4F7D18971B8EBDCB00C209B5 /* PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseKit.h; sourceTree = "<group>"; };
 		4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromiseKit.m; sourceTree = "<group>"; };
 		4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKit.swift; sourceTree = "<group>"; };
-		4F7D189A1B8EBDCB00C209B5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
 		4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocksmithRequest.swift; sourceTree = "<group>"; };
+		4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConstants.swift; sourceTree = "<group>"; };
+		4F7D18DB1B8F149500C209B5 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		4F1AA5B61B849880007C0632 /* OZM */ = {
 			isa = PBXGroup;
 			children = (
+				4F7D18D81B8F033300C209B5 /* Conf */,
 				4F7D18411B8EBDCB00C209B5 /* Lib */,
 				4F1AA5D91B8498C9007C0632 /* Models */,
 				4F1AA5B91B849880007C0632 /* AppDelegate.swift */,
@@ -177,7 +180,6 @@
 				4F7D18971B8EBDCB00C209B5 /* PromiseKit.h */,
 				4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */,
 				4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */,
-				4F7D189A1B8EBDCB00C209B5 /* README.markdown */,
 			);
 			path = "EZiOS7-master";
 			sourceTree = "<group>";
@@ -189,6 +191,15 @@
 				4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */,
 			);
 			path = Locksmith;
+			sourceTree = "<group>";
+		};
+		4F7D18D81B8F033300C209B5 /* Conf */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */,
+				4F7D18DB1B8F149500C209B5 /* APIConstants.swift */,
+			);
+			path = Conf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +303,7 @@
 			files = (
 				4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */,
 				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
-				4F7D18CC1B8EBDCB00C209B5 /* README.markdown in Sources */,
+				4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */,
 				4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */,
 				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
@@ -301,6 +312,7 @@
 				4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */,
 				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
 				4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */,
+				4F7D18DA1B8F034300C209B5 /* KeychainConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
