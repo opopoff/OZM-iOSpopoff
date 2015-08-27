@@ -12,7 +12,14 @@
 		4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C01B849880007C0632 /* Images.xcassets */; };
 		4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C21B849880007C0632 /* LaunchScreen.xib */; };
 		4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5CF1B849880007C0632 /* HMACTests.swift */; };
-		4F1AA5DC1B84991A007C0632 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5DB1B84991A007C0632 /* Authorization.swift */; };
+		4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5DB1B84991A007C0632 /* Signatrure.swift */; };
+		4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5E51B84F866007C0632 /* APIClient.swift */; };
+		4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */; };
+		4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */; };
+		4F7D18CC1B8EBDCB00C209B5 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D189A1B8EBDCB00C209B5 /* README.markdown */; };
+		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
+		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
+		4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +42,16 @@
 		4F1AA5C91B849880007C0632 /* OZMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OZMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5CE1B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1AA5CF1B849880007C0632 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
-		4F1AA5DB1B84991A007C0632 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		4F1AA5DB1B84991A007C0632 /* Signatrure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signatrure.swift; sourceTree = "<group>"; };
 		4F1AA5E31B849CD2007C0632 /* OZM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OZM-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F1AA5E51B84F866007C0632 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		4F7D18971B8EBDCB00C209B5 /* PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseKit.h; sourceTree = "<group>"; };
+		4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromiseKit.m; sourceTree = "<group>"; };
+		4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKit.swift; sourceTree = "<group>"; };
+		4F7D189A1B8EBDCB00C209B5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
+		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
+		4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +93,7 @@
 		4F1AA5B61B849880007C0632 /* OZM */ = {
 			isa = PBXGroup;
 			children = (
+				4F7D18411B8EBDCB00C209B5 /* Lib */,
 				4F1AA5D91B8498C9007C0632 /* Models */,
 				4F1AA5B91B849880007C0632 /* AppDelegate.swift */,
 				4F1AA5BB1B849880007C0632 /* ViewController.swift */,
@@ -101,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4F1AA5CF1B849880007C0632 /* HMACTests.swift */,
+				4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */,
 				4F1AA5CD1B849880007C0632 /* Supporting Files */,
 			);
 			path = OZMTests;
@@ -117,6 +134,7 @@
 		4F1AA5D91B8498C9007C0632 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F1AA5E41B84F85B007C0632 /* API */,
 				4F1AA5DA1B84990F007C0632 /* Auth */,
 			);
 			path = Models;
@@ -125,9 +143,38 @@
 		4F1AA5DA1B84990F007C0632 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4F1AA5DB1B84991A007C0632 /* Authorization.swift */,
+				4F1AA5DB1B84991A007C0632 /* Signatrure.swift */,
+				4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		4F1AA5E41B84F85B007C0632 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4F1AA5E51B84F866007C0632 /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */,
+				4F7D18421B8EBDCB00C209B5 /* EZiOS7-master */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		4F7D18421B8EBDCB00C209B5 /* EZiOS7-master */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D18971B8EBDCB00C209B5 /* PromiseKit.h */,
+				4F7D18981B8EBDCB00C209B5 /* PromiseKit.m */,
+				4F7D18991B8EBDCB00C209B5 /* PromiseKit.swift */,
+				4F7D189A1B8EBDCB00C209B5 /* README.markdown */,
+			);
+			path = "EZiOS7-master";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1AA5DC1B84991A007C0632 /* Authorization.swift in Sources */,
+				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
+				4F7D18CC1B8EBDCB00C209B5 /* README.markdown in Sources */,
+				4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */,
+				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
 				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
+				4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */,
+				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
+				4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */,
 				4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +485,7 @@
 				4F1AA5D51B849880007C0632 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F1AA5D61B849880007C0632 /* Build configuration list for PBXNativeTarget "OZMTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +494,7 @@
 				4F1AA5D81B849880007C0632 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

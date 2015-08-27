@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /**
     Общий с сервером ключик для HMAC SHA256
  */
@@ -26,7 +25,7 @@ let sharedKey = "d5HjIGxYEnSH5dawbOutjOjgAWhGUlXBC6iNZnpI35eNJJpkIedp8cLuHtLeOPO
     :param: secret "Секретный" ключ пользователя
     :param: timestamp Текущее время в Unixtime
  */
-public func signRequest(url: String, body: String, userKey: String, secret: String, timestamp: NSTimeInterval) -> String? {
+public func signatureFor(url: String, body: String, userKey: String, secret: String, timestamp: NSTimeInterval) -> String? {
     /** Строка, которую будем подписывать */
     let concatenation = url + body + userKey + secret + "\(Int(timestamp))"
     var key = sharedKey.dataUsingEncoding(
