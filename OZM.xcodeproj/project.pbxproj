@@ -20,6 +20,8 @@
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */; };
+		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
+		4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
+		4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocksmithRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4F7D18D31B8EFC6700C209B5 /* Locksmith */,
 				4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */,
 				4F7D18421B8EBDCB00C209B5 /* EZiOS7-master */,
 			);
@@ -175,6 +180,15 @@
 				4F7D189A1B8EBDCB00C209B5 /* README.markdown */,
 			);
 			path = "EZiOS7-master";
+			sourceTree = "<group>";
+		};
+		4F7D18D31B8EFC6700C209B5 /* Locksmith */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */,
+				4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */,
+			);
+			path = Locksmith;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */,
 				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
 				4F7D18CC1B8EBDCB00C209B5 /* README.markdown in Sources */,
 				4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */,
+				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
 				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
