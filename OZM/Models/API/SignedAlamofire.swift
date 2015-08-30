@@ -8,10 +8,16 @@
 
 import Foundation
 
-private func sign(url: String, body: NSData?, registration: RegistrationResult) -> String? {
+private func sign(url: String, body: NSData?, useDefaultSecrets: Bool = false) -> String? {
+    var registration: RegistrationResult?
+    if useDefaultSecrets {
+        registration = DefaultSecrets
+    } else {
+        registration = RegistrationResult.fromKeychain()
+    }
     if let
-        userKey = registration.userKey,
-        secret = registration.secretKey {
+        userKey = registration?.userKey,
+        secret = registration?.secretKey {
             return sign(url, body, userKey, secret)
     }
     return nil
@@ -19,12 +25,7 @@ private func sign(url: String, body: NSData?, registration: RegistrationResult) 
 
 private func sign(url: String, data: NSData?, userKey: String, secretKey: String) -> String? {
     let timestamp = NSDate().timeIntervalSince1970
-    var requestBody: NSData = {
-        switch data {
-        case .Some(let b): return b
-        case .None: return "".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-        }
-    }()
+    var requestBody: NSData = data ?? "".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     if let
         url = NSURL(string: url)?.path,
         body = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String,
@@ -49,18 +50,8 @@ public func signedUpload(
     headers: [String: String]? = nil,
     #data: NSData,
     useDefaultSecrets: Bool = false) -> Request {
-        var hdrs = APIConstants.defaultHeaders
-        if let
-            registration = RegistrationResult.fromKeychain(),
-            auth = sign(URLString.URLString, data, registration) {
-                hdrs["Authorization"] = auth
-        }
-        if useDefaultSecrets, let auth = sign(URLString.URLString, data, DefaultSecrets) {
-            hdrs["Authorization"] = auth
-        }
-        if let headers = headers {
-            hdrs += headers
-        }
+        var hdrs = headers ?? APIConstants.defaultHeaders
+        hdrs["Authorization"] = sign(URLString.URLString, data, useDefaultSecrets: useDefaultSecrets) ?? ""
         return upload(method, URLString, headers: hdrs, data: data)
 }
 
@@ -70,18 +61,8 @@ public func signedRequest(
     parameters: [String: AnyObject]? = nil,
     encoding: ParameterEncoding = .URL,
     headers: [String: String]? = nil,
-    useDefaulSecrets: Bool = false) -> Request {
-        var hdrs = APIConstants.defaultHeaders
-        if let
-            registration = RegistrationResult.fromKeychain(),
-            auth = sign(URLString.URLString, nil, registration) {
-                hdrs["Authorization"] = auth
-        }
-        if useDefaulSecrets, let auth = sign(URLString.URLString, nil, DefaultSecrets) {
-            hdrs["Authorization"] = auth
-        }
-        if let headers = headers {
-            hdrs += headers
-        }
+    useDefaultSecrets: Bool = false) -> Request {
+        var hdrs = headers ?? APIConstants.defaultHeaders
+        hdrs["Authorization"] = sign(URLString.URLString, nil, useDefaultSecrets: useDefaultSecrets) ?? ""
         return request(method, URLString, parameters: parameters, encoding: encoding, headers: hdrs)
 }
