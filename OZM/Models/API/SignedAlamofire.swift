@@ -9,23 +9,16 @@
 import Foundation
 
 private func sign(url: String, body: NSData?, useDefaultSecrets: Bool = false) -> String? {
-    var registration: RegistrationResult?
-    if useDefaultSecrets {
-        registration = DefaultSecrets
-    } else {
-        registration = RegistrationResult.fromKeychain()
-    }
-    if let
-        userKey = registration?.userKey,
-        secret = registration?.secretKey {
-            return sign(url, body, userKey, secret)
+    let registration = useDefaultSecrets ? DefaultSecrets : RegistrationResult.fromKeychain()
+    if let userKey = registration?.userKey, secret = registration?.secretKey {
+        return sign(url, body, userKey, secret)
     }
     return nil
 }
 
 private func sign(url: String, data: NSData?, userKey: String, secretKey: String) -> String? {
     let timestamp = NSDate().timeIntervalSince1970
-    var requestBody: NSData = data ?? "".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+    var requestBody = data ?? "".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     if let
         url = NSURL(string: url)?.path,
         body = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String,

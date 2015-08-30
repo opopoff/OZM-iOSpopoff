@@ -40,6 +40,7 @@
 		4FF872B81B932EE900A67EEE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872AD1B932EE900A67EEE /* Validation.swift */; };
 		4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872B91B93367F00A67EEE /* SignedAlamofire.swift */; };
 		4FF872BD1B93446B00A67EEE /* MergeableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */; };
+		4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		4FF872AD1B932EE900A67EEE /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4FF872B91B93367F00A67EEE /* SignedAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedAlamofire.swift; sourceTree = "<group>"; };
 		4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeableDictionary.swift; sourceTree = "<group>"; };
+		4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryWithJson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */,
+				4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				4F7D18CB1B8EBDCB00C209B5 /* PromiseKit.swift in Sources */,
 				4FF872B21B932EE900A67EEE /* MultipartFormData.swift in Sources */,
 				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
+				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
 				4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */,
 				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
