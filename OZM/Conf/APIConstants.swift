@@ -21,4 +21,5 @@ public struct APIConstants {
     /* Handles */
     static let baseUrl = "http://debug.ozm.rocks:49124"
     static let registration = "/api/register/"
+    static let categories = "/api/categories/"
 }

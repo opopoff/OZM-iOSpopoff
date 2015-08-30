@@ -10,34 +10,21 @@ import Foundation
 
 public struct APIClient {
 
-    private static func sign(
-        request: NSMutableURLRequest,
-        userKey: String,
-        secretKey: String) -> NSMutableURLRequest?
-    {
-        let timestamp = NSDate().timeIntervalSince1970
-        if let
-            url = request.URL?.path,
-            bodyData = request.HTTPBody,
-            body = NSString(data: bodyData, encoding: NSUTF8StringEncoding) as? String,
-            signature = signatureFor(
-                /** 
-                Сервис проверяет URL с финальным слэшем, иначе он считает, что его пытаются
-                обмануть. Так как метод path возвращает относительный URL без слэша на конце,
-                мы его тут добавим руками, сорян. 
-                */
-                url + "/",
-                body,
-                userKey,
-                secretKey,
-                timestamp
-            )
-        {
-            let authHeader = "\(userKey) \(Int(timestamp)) \(signature)"
-            request.allHTTPHeaderFields?["Authorization"] = authHeader
-            return request
+    public static func getCategories() -> Promise<[Category]> {
+        return Promise { fulfill, reject in
+            let req = signedRequest(.GET, "\(APIConstants.baseUrl)\(APIConstants.categories)")
+            req.validate().responseJSON { _, _, js, error in
+                if let error = error {
+                    reject(error)
+                }
+                if let
+                    json = js as? JSONDictionary,
+                    categories = Categories(data: json).categories {
+                        fulfill(categories)
+                        return
+                }
+            }
         }
-        return nil
     }
 
     public static func registerDevice(deviceId: String) -> Promise<RegistrationResult> {
@@ -51,70 +38,29 @@ public struct APIClient {
             )
             if let error = error {
                 reject(error)
+                return
             }
 
-            var request = NSMutableURLRequest(
-                URL: NSURL(string: "\(APIConstants.baseUrl)\(APIConstants.registration)")!,
-                cachePolicy: .UseProtocolCachePolicy,
-                timeoutInterval: 10.0
+            let req = signedUpload(
+                .POST,
+                "\(APIConstants.baseUrl)\(APIConstants.registration)",
+                data: postData!,
+                useDefaultSecrets: true
             )
-            request.HTTPMethod = "POST"
-            request.allHTTPHeaderFields = APIConstants.defaultHeaders
-            request.HTTPBody = postData
-            if let
-                userKey = DefaultSecrets.userKey,
-                secret = DefaultSecrets.secretKey {
-                    request = sign(request, userKey: userKey, secretKey: secret)!
-            } else {
-                reject(
-                    NSError(
-                        domain: "com.ozm.api",
-                        code: -1,
-                        userInfo: [
-                            "description": "No default secrets found! 😱"
-                        ]
-                    )
-                )
-            }
 
-            let session = NSURLSession.sharedSession()
-            let dataTask = session.dataTaskWithRequest(request) { data, response, error in
-                 if let error = error {
+            req.validate().responseJSON { request, response, js, error in
+                if let error = error {
                     reject(error)
-                } else {
-                    if let httpResponse = response as? NSHTTPURLResponse {
-                        if httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 {
-                            var parsingError: NSError?
-                            let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(
-                                data,
-                                options: NSJSONReadingOptions.allZeros,
-                                error: &parsingError
-                            )
-                            if let error = parsingError {
-                                reject(error)
-                            }
-                            if let json = json as? JSONDictionary {
-                                let result = RegistrationResult(data: json)
-                                if result.save() {
-                                    fulfill(result)
-                                }
-                            }
-                        } else {
-                            reject(
-                                NSError(
-                                    domain: "com.ozm.api",
-                                    code: httpResponse.statusCode,
-                                    userInfo: [
-                                        "description": "Not 20x response code",
-                                        "responseString": NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                                    ]
-                                )
-                            )
-                        }
+                    return
+                }
+
+                if let json = js as? JSONDictionary {
+                    let result = RegistrationResult(data: json)
+                    if result.save() {
+                        fulfill(result)
                     }
                 }
             }
-            dataTask.resume()
         }
     }
 }
