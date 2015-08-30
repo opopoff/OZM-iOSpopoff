@@ -41,6 +41,8 @@
 		4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872B91B93367F00A67EEE /* SignedAlamofire.swift */; };
 		4FF872BD1B93446B00A67EEE /* MergeableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */; };
 		4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */; };
+		4FF872C11B93618D00A67EEE /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872C01B93618D00A67EEE /* FeedTests.swift */; };
+		4FF872C31B93656B00A67EEE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872C21B93656B00A67EEE /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		4FF872B91B93367F00A67EEE /* SignedAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedAlamofire.swift; sourceTree = "<group>"; };
 		4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeableDictionary.swift; sourceTree = "<group>"; };
 		4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryWithJson.swift; sourceTree = "<group>"; };
+		4FF872C01B93618D00A67EEE /* FeedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		4FF872C21B93656B00A67EEE /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 				4F1AA5CF1B849880007C0632 /* HMACTests.swift */,
 				4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */,
 				4FF8729F1B93245E00A67EEE /* CategoriesTests.swift */,
+				4FF872C01B93618D00A67EEE /* FeedTests.swift */,
 				4F1AA5CD1B849880007C0632 /* Supporting Files */,
 			);
 			path = OZMTests;
@@ -186,6 +191,7 @@
 				4F1AA5E41B84F85B007C0632 /* API */,
 				4F1AA5DA1B84990F007C0632 /* Auth */,
 				4FF8729D1B931E1500A67EEE /* Category.swift */,
+				4FF872C21B93656B00A67EEE /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF872B31B932EE900A67EEE /* ParameterEncoding.swift in Sources */,
+				4FF872C31B93656B00A67EEE /* Image.swift in Sources */,
 				4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */,
 				4FF872BD1B93446B00A67EEE /* MergeableDictionary.swift in Sources */,
 				4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */,
@@ -435,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */,
+				4FF872C11B93618D00A67EEE /* FeedTests.swift in Sources */,
 				4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */,
 				4FF872A01B93245E00A67EEE /* CategoriesTests.swift in Sources */,
 			);

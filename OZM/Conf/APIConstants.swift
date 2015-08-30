@@ -22,4 +22,8 @@ public struct APIConstants {
     static let baseUrl = "http://debug.ozm.rocks:49124"
     static let registration = "\(baseUrl)/api/register/"
     static let categories = "\(baseUrl)/api/categories/"
+
+    static func feed(id: Int) -> String {
+        return "\(baseUrl)/api/feed/\(id)/"
+    }
 }

@@ -21,10 +21,10 @@ class CategoriesTests: XCTestCase {
             catsResult = result
             expectation.fulfill()
         }
-        APIClient.registerDevice("testid").then { resp in 
-            APIClient.getCategories().then { categories in
-                gotResult(categories)
-            }
+        APIClient.registerDevice("testid").then { _ in
+            APIClient.getCategories()
+        }.then { categories in
+            gotResult(categories)
         }
         waitForExpectationsWithTimeout(10.0) { error in
             if let error = error {
