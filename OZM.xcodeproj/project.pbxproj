@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F157E571B9DF85400A5D417 /* UIImageView+remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */; };
+		4F157E6D1B9DFC2100A5D417 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E651B9DFC2100A5D417 /* AnimatableImageView.swift */; };
+		4F157E6E1B9DFC2100A5D417 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E661B9DFC2100A5D417 /* AnimatedFrame.swift */; };
+		4F157E6F1B9DFC2100A5D417 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E671B9DFC2100A5D417 /* Animator.swift */; };
+		4F157E701B9DFC2100A5D417 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E681B9DFC2100A5D417 /* Curry.swift */; };
+		4F157E711B9DFC2100A5D417 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E6A1B9DFC2100A5D417 /* ImageSourceHelpers.swift */; };
+		4F157E731B9DFC2100A5D417 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E6C1B9DFC2100A5D417 /* UIImageExtension.swift */; };
+		4F157E7A1B9DFCCD00A5D417 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E751B9DFCCD00A5D417 /* Array.swift */; };
+		4F157E7C1B9DFCCD00A5D417 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E771B9DFCCD00A5D417 /* Operators.swift */; };
+		4F157E7D1B9DFCCD00A5D417 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E781B9DFCCD00A5D417 /* Optional.swift */; };
 		4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5B91B849880007C0632 /* AppDelegate.swift */; };
 		4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5BB1B849880007C0632 /* ViewController.swift */; };
 		4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C01B849880007C0632 /* Images.xcassets */; };
@@ -56,6 +66,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+remote.swift"; sourceTree = "<group>"; };
+		4F157E651B9DFC2100A5D417 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableImageView.swift; sourceTree = "<group>"; };
+		4F157E661B9DFC2100A5D417 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedFrame.swift; sourceTree = "<group>"; };
+		4F157E671B9DFC2100A5D417 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		4F157E681B9DFC2100A5D417 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
+		4F157E691B9DFC2100A5D417 /* Gifu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gifu.h; sourceTree = "<group>"; };
+		4F157E6A1B9DFC2100A5D417 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSourceHelpers.swift; sourceTree = "<group>"; };
+		4F157E6C1B9DFC2100A5D417 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4F157E751B9DFCCD00A5D417 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		4F157E771B9DFCCD00A5D417 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		4F157E781B9DFCCD00A5D417 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		4F1AA5B41B849880007C0632 /* OZM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OZM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5B81B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1AA5B91B849880007C0632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +142,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F157E551B9DF85400A5D417 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */,
+			);
+			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		4F157E641B9DFC2100A5D417 /* gifu */ = {
+			isa = PBXGroup;
+			children = (
+				4F157E651B9DFC2100A5D417 /* AnimatableImageView.swift */,
+				4F157E661B9DFC2100A5D417 /* AnimatedFrame.swift */,
+				4F157E671B9DFC2100A5D417 /* Animator.swift */,
+				4F157E681B9DFC2100A5D417 /* Curry.swift */,
+				4F157E691B9DFC2100A5D417 /* Gifu.h */,
+				4F157E6A1B9DFC2100A5D417 /* ImageSourceHelpers.swift */,
+				4F157E6C1B9DFC2100A5D417 /* UIImageExtension.swift */,
+			);
+			path = gifu;
+			sourceTree = "<group>";
+		};
+		4F157E741B9DFCCD00A5D417 /* Runes */ = {
+			isa = PBXGroup;
+			children = (
+				4F157E751B9DFCCD00A5D417 /* Array.swift */,
+				4F157E771B9DFCCD00A5D417 /* Operators.swift */,
+				4F157E781B9DFCCD00A5D417 /* Optional.swift */,
+			);
+			path = Runes;
+			sourceTree = "<group>";
+		};
 		4F1AA5AB1B84987F007C0632 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +270,8 @@
 		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4F157E741B9DFCCD00A5D417 /* Runes */,
+				4F157E641B9DFC2100A5D417 /* gifu */,
 				4FF872A11B932EE900A67EEE /* Alamofire */,
 				4F7D18D31B8EFC6700C209B5 /* Locksmith */,
 				4F7D18D11B8EF7A900C209B5 /* JSONHelper.swift */,
@@ -284,6 +339,7 @@
 		4FF872BB1B93445900A67EEE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4F157E551B9DF85400A5D417 /* ImageCache */,
 				4FF872BC1B93446B00A67EEE /* MergeableDictionary.swift */,
 				4FF872BE1B934F7F00A67EEE /* DictionaryWithJson.swift */,
 			);
@@ -407,12 +463,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F157E6F1B9DFC2100A5D417 /* Animator.swift in Sources */,
 				4FF872B31B932EE900A67EEE /* ParameterEncoding.swift in Sources */,
 				4FF872C31B93656B00A67EEE /* Image.swift in Sources */,
 				4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */,
 				4FF872BD1B93446B00A67EEE /* MergeableDictionary.swift in Sources */,
 				4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */,
 				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
+				4F157E6E1B9DFC2100A5D417 /* AnimatedFrame.swift in Sources */,
 				4FF872B51B932EE900A67EEE /* ResponseSerialization.swift in Sources */,
 				4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */,
 				4FF872B11B932EE900A67EEE /* Manager.swift in Sources */,
@@ -421,9 +479,13 @@
 				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
+				4F157E7A1B9DFCCD00A5D417 /* Array.swift in Sources */,
+				4F157E7C1B9DFCCD00A5D417 /* Operators.swift in Sources */,
 				4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */,
 				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
 				4FF872B81B932EE900A67EEE /* Validation.swift in Sources */,
+				4F157E7D1B9DFCCD00A5D417 /* Optional.swift in Sources */,
+				4F157E731B9DFC2100A5D417 /* UIImageExtension.swift in Sources */,
 				4FF872B61B932EE900A67EEE /* ServerTrustPolicy.swift in Sources */,
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
 				4FF872B41B932EE900A67EEE /* Request.swift in Sources */,
@@ -431,8 +493,12 @@
 				4FF872B71B932EE900A67EEE /* Upload.swift in Sources */,
 				4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */,
 				4FF8729E1B931E1500A67EEE /* Category.swift in Sources */,
+				4F157E711B9DFC2100A5D417 /* ImageSourceHelpers.swift in Sources */,
 				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
+				4F157E701B9DFC2100A5D417 /* Curry.swift in Sources */,
 				4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */,
+				4F157E571B9DF85400A5D417 /* UIImageView+remote.swift in Sources */,
+				4F157E6D1B9DFC2100A5D417 /* AnimatableImageView.swift in Sources */,
 				4F7D18DA1B8F034300C209B5 /* KeychainConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,9 +621,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OZM",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = OZM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -567,7 +638,8 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./OZM/OZM-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OZM/OZM-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -575,9 +647,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OZM",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = OZM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -587,7 +664,8 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./OZM/OZM-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OZM/OZM-Bridging-Header.h";
 			};
 			name = Release;
 		};

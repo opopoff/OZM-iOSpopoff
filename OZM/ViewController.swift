@@ -12,14 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let imageView = AnimatableImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+        self.view.addSubview(imageView)
+        
+        imageView.setImageFromUrl("https://media.giphy.com/media/lXiRKeGZeOyEpRHkk/giphy.gif")
+            .then { image in
+                imageView.animateWithImageData(data: image)
+            }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
