@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let imageView = AnimatableImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+        let imageView = AnimatableImageView(
+            frame: self.view.frame
+        )
         self.view.addSubview(imageView)
         
         imageView.setImageFromUrl("https://media.giphy.com/media/lXiRKeGZeOyEpRHkk/giphy.gif")
