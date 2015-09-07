@@ -71,7 +71,6 @@
 		4F157E661B9DFC2100A5D417 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedFrame.swift; sourceTree = "<group>"; };
 		4F157E671B9DFC2100A5D417 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		4F157E681B9DFC2100A5D417 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
-		4F157E691B9DFC2100A5D417 /* Gifu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gifu.h; sourceTree = "<group>"; };
 		4F157E6A1B9DFC2100A5D417 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSourceHelpers.swift; sourceTree = "<group>"; };
 		4F157E6C1B9DFC2100A5D417 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		4F157E751B9DFCCD00A5D417 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -157,7 +156,6 @@
 				4F157E661B9DFC2100A5D417 /* AnimatedFrame.swift */,
 				4F157E671B9DFC2100A5D417 /* Animator.swift */,
 				4F157E681B9DFC2100A5D417 /* Curry.swift */,
-				4F157E691B9DFC2100A5D417 /* Gifu.h */,
 				4F157E6A1B9DFC2100A5D417 /* ImageSourceHelpers.swift */,
 				4F157E6C1B9DFC2100A5D417 /* UIImageExtension.swift */,
 			);
