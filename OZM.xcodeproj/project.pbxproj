@@ -35,6 +35,10 @@
 		4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18DB1B8F149500C209B5 /* APIConstants.swift */; };
 		4F7D18E11B8F2A0600C209B5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7D18DF1B8F2A0600C209B5 /* Fabric.framework */; };
 		4F7D18E21B8F2A0600C209B5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7D18E01B8F2A0600C209B5 /* Crashlytics.framework */; };
+		4F7E21401B9F4900007CB0FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7E213F1B9F4900007CB0FF /* Main.storyboard */; };
+		4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */; };
+		4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2E1BA2150400DC15AF /* SplashController.swift */; };
+		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
 		4FF8729E1B931E1500A67EEE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8729D1B931E1500A67EEE /* Category.swift */; };
 		4FF872A01B93245E00A67EEE /* CategoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8729F1B93245E00A67EEE /* CategoriesTests.swift */; };
 		4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872A31B932EE900A67EEE /* Alamofire.swift */; };
@@ -100,6 +104,10 @@
 		4F7D18DB1B8F149500C209B5 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		4F7D18DF1B8F2A0600C209B5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4F7D18E01B8F2A0600C209B5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		4F7E213F1B9F4900007CB0FF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
+		4FCB4E2E1BA2150400DC15AF /* SplashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		4FF8729D1B931E1500A67EEE /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4FF8729F1B93245E00A67EEE /* CategoriesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTests.swift; sourceTree = "<group>"; };
 		4FF872A21B932EE900A67EEE /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 				4F7D18DE1B8F29FB00C209B5 /* Frameworks */,
 				4F7D18D81B8F033300C209B5 /* Conf */,
 				4F7D18411B8EBDCB00C209B5 /* Lib */,
+				4F7E213A1B9F4695007CB0FF /* UI */,
 				4F1AA5D91B8498C9007C0632 /* Models */,
 				4F1AA5B91B849880007C0632 /* AppDelegate.swift */,
 				4F1AA5BB1B849880007C0632 /* ViewController.swift */,
@@ -315,6 +324,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4F7E213A1B9F4695007CB0FF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4F7E213F1B9F4900007CB0FF /* Main.storyboard */,
+				4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */,
+				4FCB4E2E1BA2150400DC15AF /* SplashController.swift */,
+				4FCB4E301BA2172900DC15AF /* CategoryCell.swift */,
+			);
+			name = UI;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4FF872A11B932EE900A67EEE /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +449,7 @@
 				4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */,
 				4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */,
 				4FF872B01B932EE900A67EEE /* Info.plist in Resources */,
+				4F7E21401B9F4900007CB0FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +488,7 @@
 				4FF872C31B93656B00A67EEE /* Image.swift in Sources */,
 				4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */,
 				4FF872BD1B93446B00A67EEE /* MergeableDictionary.swift in Sources */,
+				4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */,
 				4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */,
 				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
 				4F157E6E1B9DFC2100A5D417 /* AnimatedFrame.swift in Sources */,
@@ -479,6 +502,7 @@
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
 				4F157E7A1B9DFCCD00A5D417 /* Array.swift in Sources */,
 				4F157E7C1B9DFCCD00A5D417 /* Operators.swift in Sources */,
+				4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */,
 				4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */,
 				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
 				4FF872B81B932EE900A67EEE /* Validation.swift in Sources */,
@@ -494,6 +518,7 @@
 				4F157E711B9DFC2100A5D417 /* ImageSourceHelpers.swift in Sources */,
 				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
 				4F157E701B9DFC2100A5D417 /* Curry.swift in Sources */,
+				4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */,
 				4F7D18CA1B8EBDCB00C209B5 /* PromiseKit.m in Sources */,
 				4F157E571B9DF85400A5D417 /* UIImageView+remote.swift in Sources */,
 				4F157E6D1B9DFC2100A5D417 /* AnimatableImageView.swift in Sources */,
@@ -619,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -645,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
