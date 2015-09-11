@@ -127,10 +127,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Pj9-7a-mdX"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kg-JA-CiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="174"/>
+            <point key="canvasLocation" x="348" y="174"/>
         </scene>
         <!--Categories Controller-->
         <scene sceneID="HUz-uZ-5zl">

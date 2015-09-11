@@ -81,6 +81,12 @@ class ImagesController:
         }
     }
 
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let image = images?[indexPath.row] {
+            println(image.url)
+        }
+    }
+
     override func collectionView(
         collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
