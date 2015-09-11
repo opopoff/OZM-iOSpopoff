@@ -21,8 +21,6 @@ class CategoryCell: UICollectionViewCell {
     }
 
     func populateWith(category: Category) -> Void {
-        imageView.setImageFromUrl(category.backgroundImage!).then { data in
-            self.imageView.animateWithImageData(data: data)
-        }
+        imageView.setImageFromUrl(category.backgroundImage!)
     }
 }

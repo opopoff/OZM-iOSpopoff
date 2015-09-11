@@ -24,14 +24,12 @@ class ImagesController:
 
     //MARK: - Data
 
-
     /**
     Инициирует получение данных с сервера
     */
     private func reloadData() -> Void {
 
         let update: ([Image] -> Void) = { imgs in
-            println("Received: \(imgs)")
             self.images = imgs
             self.collectionView?.reloadData()
         }
@@ -46,6 +44,16 @@ class ImagesController:
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadData()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
 
     //MARK: - Collection view stuff

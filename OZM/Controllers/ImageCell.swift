@@ -15,14 +15,10 @@ class ImageCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.cancelReq()
-        imageView.cleanup()
-        imageView.image = nil
+        imageView.clean()
     }
 
     func populateWith(image: Image) -> Void {
-        imageView.setImageFromUrl(image.url!).then { data in
-            self.imageView.animateWithImageData(data: data)
-        }
+        imageView.setImageFromUrl(image.url!)
     }
 }
