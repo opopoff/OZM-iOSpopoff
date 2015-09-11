@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-import OZM
+import UMAD
 
 
 class RegistrationTestst: XCTestCase {

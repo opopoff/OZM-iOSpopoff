@@ -18,7 +18,6 @@
 		4F157E7C1B9DFCCD00A5D417 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E771B9DFCCD00A5D417 /* Operators.swift */; };
 		4F157E7D1B9DFCCD00A5D417 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E781B9DFCCD00A5D417 /* Optional.swift */; };
 		4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5B91B849880007C0632 /* AppDelegate.swift */; };
-		4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5BB1B849880007C0632 /* ViewController.swift */; };
 		4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C01B849880007C0632 /* Images.xcassets */; };
 		4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C21B849880007C0632 /* LaunchScreen.xib */; };
 		4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5CF1B849880007C0632 /* HMACTests.swift */; };
@@ -39,6 +38,8 @@
 		4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */; };
 		4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2E1BA2150400DC15AF /* SplashController.swift */; };
 		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
+		4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E321BA292FC00DC15AF /* ImagesController.swift */; };
+		4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E341BA296BB00DC15AF /* ImageCell.swift */; };
 		4FF8729E1B931E1500A67EEE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8729D1B931E1500A67EEE /* Category.swift */; };
 		4FF872A01B93245E00A67EEE /* CategoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8729F1B93245E00A67EEE /* CategoriesTests.swift */; };
 		4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF872A31B932EE900A67EEE /* Alamofire.swift */; };
@@ -83,10 +84,9 @@
 		4F1AA5B41B849880007C0632 /* OZM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OZM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5B81B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1AA5B91B849880007C0632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F1AA5BB1B849880007C0632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F1AA5C01B849880007C0632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F1AA5C31B849880007C0632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4F1AA5C91B849880007C0632 /* OZMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OZMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F1AA5C91B849880007C0632 /* UMADTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UMADTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5CE1B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1AA5CF1B849880007C0632 /* HMACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACTests.swift; sourceTree = "<group>"; };
 		4F1AA5DB1B84991A007C0632 /* Signatrure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signatrure.swift; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		4FCB4E2E1BA2150400DC15AF /* SplashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		4FCB4E321BA292FC00DC15AF /* ImagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesController.swift; sourceTree = "<group>"; };
+		4FCB4E341BA296BB00DC15AF /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		4FF8729D1B931E1500A67EEE /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4FF8729F1B93245E00A67EEE /* CategoriesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTests.swift; sourceTree = "<group>"; };
 		4FF872A21B932EE900A67EEE /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
@@ -193,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4F1AA5B41B849880007C0632 /* OZM.app */,
-				4F1AA5C91B849880007C0632 /* OZMTests.xctest */,
+				4F1AA5C91B849880007C0632 /* UMADTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,7 +210,6 @@
 				4F7E213A1B9F4695007CB0FF /* UI */,
 				4F1AA5D91B8498C9007C0632 /* Models */,
 				4F1AA5B91B849880007C0632 /* AppDelegate.swift */,
-				4F1AA5BB1B849880007C0632 /* ViewController.swift */,
 				4F1AA5C01B849880007C0632 /* Images.xcassets */,
 				4F1AA5C21B849880007C0632 /* LaunchScreen.xib */,
 				4F1AA5B71B849880007C0632 /* Supporting Files */,
@@ -331,6 +332,8 @@
 				4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */,
 				4FCB4E2E1BA2150400DC15AF /* SplashController.swift */,
 				4FCB4E301BA2172900DC15AF /* CategoryCell.swift */,
+				4FCB4E321BA292FC00DC15AF /* ImagesController.swift */,
+				4FCB4E341BA296BB00DC15AF /* ImageCell.swift */,
 			);
 			name = UI;
 			path = Controllers;
@@ -368,9 +371,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F1AA5B31B849880007C0632 /* OZM */ = {
+		4F1AA5B31B849880007C0632 /* UMAD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F1AA5D31B849880007C0632 /* Build configuration list for PBXNativeTarget "OZM" */;
+			buildConfigurationList = 4F1AA5D31B849880007C0632 /* Build configuration list for PBXNativeTarget "UMAD" */;
 			buildPhases = (
 				4F1AA5B01B849880007C0632 /* Sources */,
 				4F1AA5B11B849880007C0632 /* Frameworks */,
@@ -381,14 +384,14 @@
 			);
 			dependencies = (
 			);
-			name = OZM;
+			name = UMAD;
 			productName = OZM;
 			productReference = 4F1AA5B41B849880007C0632 /* OZM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4F1AA5C81B849880007C0632 /* OZMTests */ = {
+		4F1AA5C81B849880007C0632 /* UMADTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F1AA5D61B849880007C0632 /* Build configuration list for PBXNativeTarget "OZMTests" */;
+			buildConfigurationList = 4F1AA5D61B849880007C0632 /* Build configuration list for PBXNativeTarget "UMADTests" */;
 			buildPhases = (
 				4F1AA5C51B849880007C0632 /* Sources */,
 				4F1AA5C61B849880007C0632 /* Frameworks */,
@@ -399,9 +402,9 @@
 			dependencies = (
 				4F1AA5CB1B849880007C0632 /* PBXTargetDependency */,
 			);
-			name = OZMTests;
+			name = UMADTests;
 			productName = OZMTests;
-			productReference = 4F1AA5C91B849880007C0632 /* OZMTests.xctest */;
+			productReference = 4F1AA5C91B849880007C0632 /* UMADTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -435,8 +438,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F1AA5B31B849880007C0632 /* OZM */,
-				4F1AA5C81B849880007C0632 /* OZMTests */,
+				4F1AA5B31B849880007C0632 /* UMAD */,
+				4F1AA5C81B849880007C0632 /* UMADTests */,
 			);
 		};
 /* End PBXProject section */
@@ -500,11 +503,12 @@
 				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4F7D18D21B8EF7A900C209B5 /* JSONHelper.swift in Sources */,
+				4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */,
 				4F157E7A1B9DFCCD00A5D417 /* Array.swift in Sources */,
 				4F157E7C1B9DFCCD00A5D417 /* Operators.swift in Sources */,
+				4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */,
 				4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */,
 				4FF872AE1B932EE900A67EEE /* Alamofire.swift in Sources */,
-				4F1AA5BC1B849880007C0632 /* ViewController.swift in Sources */,
 				4FF872B81B932EE900A67EEE /* Validation.swift in Sources */,
 				4F157E7D1B9DFCCD00A5D417 /* Optional.swift in Sources */,
 				4F157E731B9DFC2100A5D417 /* UIImageExtension.swift in Sources */,
@@ -542,7 +546,7 @@
 /* Begin PBXTargetDependency section */
 		4F1AA5CB1B849880007C0632 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4F1AA5B31B849880007C0632 /* OZM */;
+			target = 4F1AA5B31B849880007C0632 /* UMAD */;
 			targetProxy = 4F1AA5CA1B849880007C0632 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -645,6 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -672,6 +677,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,7 +715,7 @@
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OZM.app/OZM";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMAD.app/UMAD";
 			};
 			name = Debug;
 		};
@@ -724,7 +730,7 @@
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OZM.app/OZM";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMAD.app/UMAD";
 			};
 			name = Release;
 		};
@@ -740,7 +746,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F1AA5D31B849880007C0632 /* Build configuration list for PBXNativeTarget "OZM" */ = {
+		4F1AA5D31B849880007C0632 /* Build configuration list for PBXNativeTarget "UMAD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F1AA5D41B849880007C0632 /* Debug */,
@@ -749,7 +755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F1AA5D61B849880007C0632 /* Build configuration list for PBXNativeTarget "OZMTests" */ = {
+		4F1AA5D61B849880007C0632 /* Build configuration list for PBXNativeTarget "UMADTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F1AA5D71B849880007C0632 /* Debug */,

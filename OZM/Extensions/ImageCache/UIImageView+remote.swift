@@ -9,18 +9,29 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
+class WebImageView: AnimatableImageView {
+
+    var req: Request? = nil
+
+    /**
+    Метод для отмены текущего реквеста
+    */
+    func cancelReq() -> Void {
+        if let req = req {
+            req.cancel()
+        }
+    }
 
     /**
     Метод для удобной загрузки картинок из сети
     */
-    public func setImageFromUrl(url: String, placeholder: String? = nil) -> Promise<NSData> {
+    func setImageFromUrl(url: String, placeholder: String? = nil) -> Promise<NSData> {
         if let placeholder = placeholder {
             self.image = UIImage(named: placeholder)
         }
         return Promise { fulfill, reject in
-            let req = request(.GET, url)
-            req.response { _, _, data, error in
+            self.req = request(.GET, url)
+            self.req!.response { _, _, data, error in
                 if let error = error {
                     reject(error)
                     return

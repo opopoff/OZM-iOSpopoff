@@ -9,15 +9,15 @@
 
 import UIKit
 import XCTest
-import OZM
+import UMAD
 
 class CategoriesTests: XCTestCase {
 
     func testGet() {
         let expectation = expectationWithDescription("Запрос категорий")
-        var catsResult: [OZM.Category]? = nil
+        var catsResult: [UMAD.Category]? = nil
 
-        let gotResult: ([OZM.Category]? -> Void) = { (result: [OZM.Category]?) in
+        let gotResult: ([UMAD.Category]? -> Void) = { (result: [UMAD.Category]?) in
             catsResult = result
             expectation.fulfill()
         }

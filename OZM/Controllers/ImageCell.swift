@@ -1,5 +1,5 @@
 //
-//  CategoryCell.swift
+//  ImageCell.swift
 //  OZM
 //
 //  Created by Semyon Novikov on 11/09/15.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: WebImageView!
 
@@ -20,8 +20,8 @@ class CategoryCell: UICollectionViewCell {
         imageView.image = nil
     }
 
-    func populateWith(category: Category) -> Void {
-        imageView.setImageFromUrl(category.backgroundImage!).then { data in
+    func populateWith(image: Image) -> Void {
+        imageView.setImageFromUrl(image.url!).then { data in
             self.imageView.animateWithImageData(data: data)
         }
     }

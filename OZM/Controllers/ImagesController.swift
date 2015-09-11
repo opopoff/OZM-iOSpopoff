@@ -1,5 +1,5 @@
 //
-//  CategoriesController.swift
+//  ImagesController.swift
 //  OZM
 //
 //  Created by Semyon Novikov on 11/09/15.
@@ -9,27 +9,34 @@
 import Foundation
 import UIKit
 
-class CategoriesController:
+class ImagesController:
     UICollectionViewController,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
-    private var selectedCat: Category?
-    private var categories: [Category]?
+    private var images: [Image]?
+    var category: Category? {
+        didSet {
+            self.reloadData()
+        }
+    }
 
     //MARK: - Data
+
 
     /**
     Инициирует получение данных с сервера
     */
     private func reloadData() -> Void {
-        let update: ([Category] -> Void) = { cs in
-            self.categories = cs
+
+        let update: ([Image] -> Void) = { imgs in
+            println("Received: \(imgs)")
+            self.images = imgs
             self.collectionView?.reloadData()
         }
 
-        APIClient.getCategories()
+        APIClient.getFeed(category!)
             .then  { update($0) }
             .catch { println("I really should handle this: \($0.localizedDescription)") }
     }
@@ -48,7 +55,7 @@ class CategoriesController:
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories?.count ?? 0
+        return images?.count ?? 0
     }
 
     func collectionView(
@@ -66,26 +73,11 @@ class CategoriesController:
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         let cell = collectionView
-            .dequeueReusableCellWithReuseIdentifier("category", forIndexPath: indexPath) as! CategoryCell
+            .dequeueReusableCellWithReuseIdentifier("image", forIndexPath: indexPath) as! ImageCell
 
-        if let category = categories?[indexPath.row] {
-            cell.populateWith(category)
+        if let image = images?[indexPath.row] {
+            cell.populateWith(image)
         }
         return cell
     }
-
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let category = categories?[indexPath.row] {
-            selectedCat = category
-            performSegueWithIdentifier("show_images", sender: nil)
-        }
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let segueId = segue.identifier where segueId == "show_images" {
-            var imagesCtrl = segue.destinationViewController as! ImagesController
-            imagesCtrl.category = selectedCat
-        }
-    }
 }
-
