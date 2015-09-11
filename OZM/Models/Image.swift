@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct Image: Deserializable {
     public var id: Int?
@@ -47,5 +48,18 @@ public struct Image: Deserializable {
         isNewBlink <-- data["isNewBlink"]
         mainColor <-- data["mainColor"]
         timeUsed <-- data["timeUsed"]
+    }
+
+
+    public func thumbSize() -> CGSize? {
+        if let
+            width = thumbnailWidth,
+            height = thumbnailHeight {
+                return CGSize(
+                    width: Double(width) / 2.0,
+                    height: Double(height) / 2.0
+                )
+        }
+        return nil
     }
 }

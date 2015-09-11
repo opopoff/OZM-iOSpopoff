@@ -157,17 +157,29 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-qx-ioC" customClass="WebImageView" customModule="UMAD" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-OQ-Ap4" userLabel="cat_title">
+                                            <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="pgm-OQ-Ap4" secondAttribute="bottom" constant="-8" id="4nE-ot-Vq3"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="pgm-OQ-Ap4" secondAttribute="trailing" constant="-8" id="BB1-My-D3F"/>
                                     <constraint firstItem="Cld-qx-ioC" firstAttribute="top" secondItem="zVl-HI-gJQ" secondAttribute="top" id="CBV-Zy-jSh"/>
                                     <constraint firstItem="Cld-qx-ioC" firstAttribute="leading" secondItem="zVl-HI-gJQ" secondAttribute="leading" id="Cqq-ou-HSV"/>
+                                    <constraint firstItem="pgm-OQ-Ap4" firstAttribute="leading" secondItem="zVl-HI-gJQ" secondAttribute="leadingMargin" constant="-8" id="DOX-34-43i"/>
                                     <constraint firstAttribute="trailing" secondItem="Cld-qx-ioC" secondAttribute="trailing" id="NZ7-Qc-GK5"/>
+                                    <constraint firstItem="pgm-OQ-Ap4" firstAttribute="top" secondItem="zVl-HI-gJQ" secondAttribute="topMargin" constant="-8" id="bn0-zh-eK9"/>
                                     <constraint firstAttribute="bottom" secondItem="Cld-qx-ioC" secondAttribute="bottom" id="gcd-AL-Dph"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="Cld-qx-ioC" id="xpw-kl-ahw"/>
+                                    <outlet property="titleLabel" destination="pgm-OQ-Ap4" id="gL9-Jg-2Vr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

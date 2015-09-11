@@ -18,6 +18,7 @@ class ImagesController:
     private var images: [Image]?
     var category: Category? {
         didSet {
+            self.title = category?.description
             self.reloadData()
         }
     }
@@ -71,9 +72,13 @@ class ImagesController:
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        let width = (UIScreen.mainScreen().bounds.width / 2.0) - 25
-        let height = width / 1.4
-        return CGSize(width: width, height: height)
+        if let image = images?[indexPath.row], size = image.thumbSize() {
+            return size
+        } else {
+            let width = (UIScreen.mainScreen().bounds.width / 2.0) - 25
+            let height = width / 1.4
+            return CGSize(width: width, height: height)
+        }
     }
 
     override func collectionView(

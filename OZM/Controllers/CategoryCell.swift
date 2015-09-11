@@ -12,6 +12,7 @@ import UIKit
 class CategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: WebImageView!
+    @IBOutlet weak var titleLabel: UILabel!
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -21,6 +22,7 @@ class CategoryCell: UICollectionViewCell {
     }
 
     func populateWith(category: Category) -> Void {
+        titleLabel.text = category.description
         imageView.setImageFromUrl(category.backgroundImage!)
     }
 }
