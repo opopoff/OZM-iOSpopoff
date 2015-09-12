@@ -8,12 +8,12 @@
 
 import UIKit
 import XCTest
-import OZM
+import UMAD
 
 class HMACTest: XCTestCase {
 
     func testHmac() {
-        let hmac = signRequest(
+        let hmac = signatureFor(
             "/authentication/register/",
             "{\"deviceId\":\"1235123\"}",
             "mtFxlt3JsW4D5wOl",
