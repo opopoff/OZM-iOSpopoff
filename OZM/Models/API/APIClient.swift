@@ -11,8 +11,10 @@ import Foundation
 public struct APIClient {
 
     /**
-     Получение фида картинок по категории
-     */
+    Получение фида картинок по категории
+    
+    :param: category: категория, для которой получить фид
+    */
     public static func getFeed(category: Category) -> Promise<[Image]> {
         return Promise { fulfill, reject in
             let req = signedRequest(
@@ -79,6 +81,4 @@ public struct APIClient {
             }
         }
     }
-
-    
 }

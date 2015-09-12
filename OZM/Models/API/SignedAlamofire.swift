@@ -8,6 +8,17 @@
 
 import Foundation
 
+/**
+Возвращает значение заголовка Authorization для запроса на url с телом при 
+помощи ранее полученных секретов пользователя
+либо при помощи дефолтных секретов
+
+*useDefaultSecrets должен использоваться только для регистрации нового девайса!*
+
+:param: url: URL запроса
+:param: data: тело запроса (может быть nil)
+:param: useDefaultSecrets: если true, то для подписания будут использованы "дефолтные секреты".
+*/
 private func sign(url: String, body: NSData?, useDefaultSecrets: Bool = false) -> String? {
     let registration = useDefaultSecrets ? DefaultSecrets : RegistrationResult.fromKeychain()
     if let userKey = registration?.userKey, secret = registration?.secretKey {
@@ -16,6 +27,14 @@ private func sign(url: String, body: NSData?, useDefaultSecrets: Bool = false) -
     return nil
 }
 
+/**
+Возвращает значение заголовка Authorization для запроса на url с телом при помощи указанных секретов
+
+:param: url: URL запроса
+:param: data: тело запроса (может быть nil)
+:param: userKey: ключик пользователя
+:param: secretKey: секретный ключик для HMAC-SHA256
+*/
 private func sign(url: String, data: NSData?, userKey: String, secretKey: String) -> String? {
     let timestamp = NSDate().timeIntervalSince1970
     var requestBody = data ?? "".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
@@ -37,6 +56,9 @@ private func sign(url: String, data: NSData?, userKey: String, secretKey: String
     return nil
 }
 
+/**
+Создаёт подписанный Alamofire.Request с телом
+*/
 public func signedUpload(
     method: Method,
     URLString: URLStringConvertible,
@@ -48,6 +70,9 @@ public func signedUpload(
         return upload(method, URLString, headers: hdrs, data: data)
 }
 
+/**
+Создаёт подписанный Alamofire.Request без тела
+*/
 public func signedRequest(
     method: Method,
     URLString: URLStringConvertible,

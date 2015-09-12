@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-import OZM
+import UMAD
 
 class HMACTest: XCTestCase {
 
