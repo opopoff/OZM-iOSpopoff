@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PromiseKit
 
 class SplashController: UIViewController {
 
@@ -17,8 +18,8 @@ class SplashController: UIViewController {
         APIClient.registerDevice("test").then { _ in
             self.performSegueWithIdentifier("proceed", sender: nil)
         }
-        .catch { error in
-            println(error)
+        .catch_ { error in
+            print(error)
         }
     }
 }

@@ -26,7 +26,7 @@ class FeedTests: XCTestCase {
             APIClient.getFeed(categories.first!)
         }.then { images in
             gotResult(images)
-        }.catch { error in
+        }.catch_ { error in
             expectation.fulfill()
         }
 

@@ -19,7 +19,7 @@ public struct APIConstants {
     static let defaultHeaders = ["Content-Type": "application/json"]
 
     /* Handles */
-    static let baseUrl = "http://debug.ozm.rocks:49124"
+    static let baseUrl = "http://ozm.rocks"
     static let registration = "\(baseUrl)/api/register/"
     static let categories = "\(baseUrl)/api/categories/"
 

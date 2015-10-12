@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import JSONHelper
 
 public struct Image: Deserializable {
     public var id: Int?

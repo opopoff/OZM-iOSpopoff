@@ -30,7 +30,7 @@ class RegistrationTestst: XCTestCase {
             .then { response in
                 gotResult(response)
             }
-            .catch { error in
+            .catch_ { error in
                 XCTFail("Ошибка регистрации: \(error.userInfo)")
                 expectation.fulfill()
             }

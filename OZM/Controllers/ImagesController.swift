@@ -11,8 +11,8 @@ import UIKit
 
 class ImagesController:
     UICollectionViewController,
-    UICollectionViewDelegate,
-    UICollectionViewDataSource,
+//    UICollectionViewDelegate,
+//    UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
     private var images: [Image]?
@@ -37,7 +37,7 @@ class ImagesController:
 
         APIClient.getFeed(category!)
             .then  { update($0) }
-            .catch { println("I really should handle this: \($0.localizedDescription)") }
+            .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
     //MARK: - View Struff
@@ -83,7 +83,7 @@ class ImagesController:
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let image = images?[indexPath.row] {
-            println(image.url)
+            print(image.url, terminator: "")
         }
     }
 

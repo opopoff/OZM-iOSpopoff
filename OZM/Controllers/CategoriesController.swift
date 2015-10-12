@@ -11,8 +11,8 @@ import UIKit
 
 class CategoriesController:
     UICollectionViewController,
-    UICollectionViewDelegate,
-    UICollectionViewDataSource,
+//    UICollectionViewDelegate,
+//    UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
     private var selectedCat: Category?
@@ -31,7 +31,7 @@ class CategoriesController:
 
         APIClient.getCategories()
             .then  { update($0) }
-            .catch { println("I really should handle this: \($0.localizedDescription)") }
+            .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
     //MARK: - View Struff
@@ -83,7 +83,7 @@ class CategoriesController:
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let segueId = segue.identifier where segueId == "show_images" {
-            var imagesCtrl = segue.destinationViewController as! ImagesController
+            let imagesCtrl = segue.destinationViewController as! ImagesController
             imagesCtrl.category = selectedCat
         }
     }

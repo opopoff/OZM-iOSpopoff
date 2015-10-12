@@ -11,13 +11,13 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: WebImageView!
+    weak var imageView: WebImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.cancelReq()
-        imageView.cleanup()
+        //imageView.cleanup()
         imageView.image = nil
     }
 

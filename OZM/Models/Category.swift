@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONHelper
 
 public struct Categories: Deserializable {
     public var categories: [Category]?
