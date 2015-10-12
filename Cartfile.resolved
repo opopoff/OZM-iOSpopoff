@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "3.0.0"
+github "isair/JSONHelper" "1.6.1"
+github "antitypical/Result" "0.6.0-beta.4"
+github "thoughtbot/Runes" "v3.0.0"
+github "Thomvis/BrightFutures" "9358eae556470b0f3ead2ab8e7cfb3d82291e72b"
+github "kaishin/gifu" "v0.10.0"

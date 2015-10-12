@@ -1,0 +1,5 @@
+
+github "Alamofire/Alamofire" ~> 3.0
+github "kaishin/gifu"
+github "isair/JSONHelper"
+github "Thomvis/BrightFutures" "swift-2.0"
