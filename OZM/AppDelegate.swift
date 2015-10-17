@@ -15,13 +15,21 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigation: UINavigationController!
 
     func application(
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         Fabric.with([Crashlytics.self()])
+
+        navigation = UINavigationController(rootViewController: MainViewController())
+
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
