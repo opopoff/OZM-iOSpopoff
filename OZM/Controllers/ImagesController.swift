@@ -90,6 +90,8 @@ class ImagesController:
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let image = images?[indexPath.row] {
             print(image.url, terminator: "")
+            let imageCtrl = ImageController(image: image)
+            navigation.pushViewController(imageCtrl, animated: true)
         }
     }
 

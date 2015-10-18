@@ -33,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
 
+        UIApplication.sharedApplication().setStatusBarStyle(
+            UIStatusBarStyle.LightContent,
+            animated: false
+        )
+
         return true
     }
 
