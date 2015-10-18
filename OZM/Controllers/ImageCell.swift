@@ -11,7 +11,7 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
 
-    weak var imageView: WebImageView!
+    @IBOutlet weak var imageView: WebImageView!
 
     override func prepareForReuse() {
         super.prepareForReuse()

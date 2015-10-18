@@ -97,7 +97,9 @@
                 <constraint firstAttribute="bottom" secondItem="bxf-CJ-ZHu" secondAttribute="bottom" constant="13" id="ueL-uS-gfw"/>
                 <constraint firstItem="bxf-CJ-ZHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="w9O-MI-tdA"/>
             </constraints>
-            <point key="canvasLocation" x="380" y="389"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <point key="canvasLocation" x="334" y="336"/>
         </view>
     </objects>
 </document>

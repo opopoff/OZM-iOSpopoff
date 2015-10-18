@@ -93,15 +93,9 @@ class CategoriesController:
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let category = categories?[indexPath.row] {
-            selectedCat = category
-            performSegueWithIdentifier("show_images", sender: nil)
-        }
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let segueId = segue.identifier where segueId == "show_images" {
-            let imagesCtrl = segue.destinationViewController as! ImagesController
-            imagesCtrl.category = selectedCat
+            let imagesCtrl = ImagesController()
+            imagesCtrl.category = category
+            navigation.pushViewController(imagesCtrl, animated: true)
         }
     }
 }

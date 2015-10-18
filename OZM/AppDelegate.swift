@@ -10,12 +10,12 @@ import UIKit
 import Fabric
 import Crashlytics
 
+var navigation: UINavigationController!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    var navigation: UINavigationController!
+    var window: UIWindow!
 
     func application(
         application: UIApplication,
@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self()])
 
         navigation = UINavigationController(rootViewController: MainViewController())
+        navigation.navigationBar.barStyle = UIBarStyle.Black
+        navigation.navigationBar.translucent = true
+
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
