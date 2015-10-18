@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="UMAD" customModuleProvider="target">
             <connections>
+                <outlet property="categoriesButton" destination="WJj-iK-xi0" id="xdm-y9-dz2"/>
+                <outlet property="feedButton" destination="RQR-1L-dnt" id="JjY-ya-rHH"/>
+                <outlet property="historyButton" destination="BR5-zC-dOa" id="gSs-2D-SQ5"/>
                 <outlet property="pages" destination="bxf-CJ-ZHu" id="x0s-OE-q6w"/>
                 <outlet property="scrollView" destination="XEW-wB-4Y8" id="iSO-11-FWW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3RI-wl-aEY"/>
@@ -34,8 +37,11 @@
                             <state key="normal" title="История">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="showPage:" destination="-1" eventType="touchUpInside" id="PCg-l9-axP"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJj-iK-xi0" userLabel="Categories">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJj-iK-xi0" userLabel="Categories">
                             <rect key="frame" x="78" y="3" width="366" height="30"/>
                             <animations/>
                             <constraints>
@@ -45,8 +51,11 @@
                             <state key="normal" title="Категории">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="showPage:" destination="-1" eventType="touchUpInside" id="Zgh-5X-ePq"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQR-1L-dnt" userLabel="Feed">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQR-1L-dnt" userLabel="Feed">
                             <rect key="frame" x="444" y="3" width="70" height="30"/>
                             <animations/>
                             <constraints>
@@ -56,6 +65,9 @@
                             <state key="normal" title="Лента">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="showPage:" destination="-1" eventType="touchUpInside" id="hSg-yF-3de"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
