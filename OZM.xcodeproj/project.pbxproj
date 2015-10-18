@@ -15,7 +15,6 @@
 		4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5DB1B84991A007C0632 /* Signatrure.swift */; };
 		4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5E51B84F866007C0632 /* APIClient.swift */; };
 		4F3CBADE1BCBA9BB00169E94 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3CBADC1BCBA9BB00169E94 /* PromiseKit.framework */; settings = {ASSET_TAGS = (); }; };
-		4F3CBADF1BCBA9BB00169E94 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3CBADD1BCBA9BB00169E94 /* OMGHTTPURLRQ.framework */; settings = {ASSET_TAGS = (); }; };
 		4F3CBAE01BCBAB9000169E94 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3CBADC1BCBA9BB00169E94 /* PromiseKit.framework */; };
 		4F3CBAE11BCBAB9000169E94 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3CBADD1BCBA9BB00169E94 /* OMGHTTPURLRQ.framework */; };
 		4F3CBAE21BCBAB9000169E94 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CE71BCB7F6B0096E073 /* Result.framework */; };
@@ -23,7 +22,6 @@
 		4F3CBAE41BCBAB9000169E94 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CE91BCB7F6B0096E073 /* Alamofire.framework */; };
 		4F3CBAE51BCBAB9000169E94 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CEA1BCB7F6B0096E073 /* Box.framework */; };
 		4F3CBAE61BCBAB9000169E94 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CEB1BCB7F6B0096E073 /* Runes.framework */; };
-		4F3CBAE71BCBAB9000169E94 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CED1BCB7F6B0096E073 /* OMGHTTPURLRQ.framework */; };
 		4F3CBAE91BCBAC6300169E94 /* PromiseKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4F3CBADC1BCBA9BB00169E94 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F3CBAEA1BCBAC6300169E94 /* OMGHTTPURLRQ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4F3CBADD1BCBA9BB00169E94 /* OMGHTTPURLRQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F3CBAEB1BCBAC6300169E94 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CE71BCB7F6B0096E073 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -31,7 +29,6 @@
 		4F3CBAED1BCBAC6300169E94 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CE91BCB7F6B0096E073 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F3CBAEE1BCBAC6300169E94 /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CEA1BCB7F6B0096E073 /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F3CBAEF1BCBAC6300169E94 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CEB1BCB7F6B0096E073 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4F3CBAF01BCBAC6300169E94 /* OMGHTTPURLRQ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CED1BCB7F6B0096E073 /* OMGHTTPURLRQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
@@ -109,7 +106,6 @@
 				4F3CBAED1BCBAC6300169E94 /* Alamofire.framework in CopyFiles */,
 				4F3CBAEE1BCBAC6300169E94 /* Box.framework in CopyFiles */,
 				4F3CBAEF1BCBAC6300169E94 /* Runes.framework in CopyFiles */,
-				4F3CBAF01BCBAC6300169E94 /* OMGHTTPURLRQ.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +187,6 @@
 				4F3CBADE1BCBA9BB00169E94 /* PromiseKit.framework in Frameworks */,
 				4F8F295C1BD27BE6009C2E36 /* Fabric.framework in Frameworks */,
 				4F8F295D1BD27BE6009C2E36 /* Crashlytics.framework in Frameworks */,
-				4F3CBADF1BCBA9BB00169E94 /* OMGHTTPURLRQ.framework in Frameworks */,
 				4FFF9CEF1BCB7F6B0096E073 /* Result.framework in Frameworks */,
 				4FFF9CF01BCB7F6B0096E073 /* JSONHelper.framework in Frameworks */,
 			);
@@ -208,7 +203,6 @@
 				4F3CBAE41BCBAB9000169E94 /* Alamofire.framework in Frameworks */,
 				4F3CBAE51BCBAB9000169E94 /* Box.framework in Frameworks */,
 				4F3CBAE61BCBAB9000169E94 /* Runes.framework in Frameworks */,
-				4F3CBAE71BCBAB9000169E94 /* OMGHTTPURLRQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +486,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ozm;
 				TargetAttributes = {
 					4F1AA5B31B849880007C0632 = {
@@ -682,6 +676,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -766,6 +761,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -797,6 +793,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -820,6 +817,7 @@
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMAD.app/UMAD";
 			};
@@ -837,6 +835,7 @@
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UMAD.app/UMAD";
 			};

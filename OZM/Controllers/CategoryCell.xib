@@ -9,23 +9,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="REj-H4-H5Q" customClass="CategoryCell" customModule="UMAD" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="140"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
+                <rect key="frame" x="0.0" y="0.0" width="160" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1aN-e7-lcB" customClass="WebImageView" customModule="UMAD" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="140"/>
                         <animations/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6l-wZ-7xt" userLabel="cat_title">
-                        <rect key="frame" x="0.0" y="0.0" width="143" height="129"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6l-wZ-7xt" userLabel="cat_title">
+                        <rect key="frame" x="0.0" y="93" width="160" height="47"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="18"/>
                         <nil key="highlightedColor"/>
                         <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
                 </subviews>
                 <animations/>
@@ -39,14 +40,14 @@
                 <constraint firstItem="1aN-e7-lcB" firstAttribute="leading" secondItem="REj-H4-H5Q" secondAttribute="leading" id="Y1q-zW-uKW"/>
                 <constraint firstItem="1aN-e7-lcB" firstAttribute="top" secondItem="REj-H4-H5Q" secondAttribute="top" id="c79-Ny-7Br"/>
                 <constraint firstItem="c6l-wZ-7xt" firstAttribute="leading" secondItem="REj-H4-H5Q" secondAttribute="leadingMargin" constant="-8" id="hqh-nF-8Nf"/>
-                <constraint firstItem="c6l-wZ-7xt" firstAttribute="top" secondItem="REj-H4-H5Q" secondAttribute="topMargin" constant="-8" id="tyE-Q9-owe"/>
+                <constraint firstItem="c6l-wZ-7xt" firstAttribute="top" secondItem="REj-H4-H5Q" secondAttribute="topMargin" constant="85" id="tyE-Q9-owe"/>
                 <constraint firstAttribute="trailing" secondItem="1aN-e7-lcB" secondAttribute="trailing" id="xIo-Xq-TX7"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="1aN-e7-lcB" id="fUc-KH-YMD"/>
                 <outlet property="titleLabel" destination="c6l-wZ-7xt" id="KGB-BL-dLJ"/>
             </connections>
-            <point key="canvasLocation" x="160.5" y="304.5"/>
+            <point key="canvasLocation" x="-53" y="247"/>
         </collectionViewCell>
     </objects>
 </document>

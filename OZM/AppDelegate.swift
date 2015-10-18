@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         Fabric.with([Crashlytics.self()])
 
-        navigation = UINavigationController(rootViewController: MainViewController())
+        navigation = UINavigationController(rootViewController: SplashController())
         navigation.navigationBar.barStyle = UIBarStyle.Black
         navigation.navigationBar.translucent = true
 

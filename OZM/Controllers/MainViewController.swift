@@ -31,6 +31,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        scrollToPage(1, animated: false)
     }
 
     override func viewDidLoad() {
@@ -55,7 +56,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             width: self.categoriesCtrl.view.frame.size.width * 2,
             height: self.categoriesCtrl.view.frame.size.height
         )
-        scrollToPage(2, animated: false)
+        super.viewDidLoad()
     }
 
     @IBAction func showPage(sender: UIButton) {

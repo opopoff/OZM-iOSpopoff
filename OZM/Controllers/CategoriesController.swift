@@ -20,6 +20,7 @@ class CategoriesController:
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    @IBOutlet weak var searchField: UITextField!
 
     //MARK: - Initialization
 
@@ -43,7 +44,7 @@ class CategoriesController:
         }
 
         APIClient.getCategories()
-            .then  { update($0) }
+            .then { update($0) }
             .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
@@ -54,6 +55,11 @@ class CategoriesController:
         self.collectionView?.registerNib(
             UINib(nibName: "CategoryCell", bundle: nil),
             forCellWithReuseIdentifier: "category"
+        )
+        searchField.attributedPlaceholder =
+            NSAttributedString(
+                string: "НАЙТИ",
+                attributes: [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
         )
         reloadData()
     }
@@ -73,9 +79,12 @@ class CategoriesController:
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
+        /*
         let width = (UIScreen.mainScreen().bounds.width / 2.0) - 25
         let height = width / 1.4
         return CGSize(width: width, height: height)
+        */
+        return CGSize(width: 160, height: 140)
     }
 
     func collectionView(

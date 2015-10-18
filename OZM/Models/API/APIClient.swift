@@ -49,6 +49,7 @@ public struct APIClient {
                 if let
                     json = resp.result.value as? JSONDictionary,
                     categories = Categories(data: json).categories {
+                        print(json)
                         fulfill(categories)
                 }
             }

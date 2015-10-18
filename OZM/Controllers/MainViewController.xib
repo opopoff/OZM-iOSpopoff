@@ -100,18 +100,29 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="XEW-wB-4Y8" secondAttribute="trailing" id="0Ix-ya-YNQ"/>
                 <constraint firstAttribute="trailing" secondItem="bxf-CJ-ZHu" secondAttribute="trailing" constant="39" id="8RY-Xe-DfA"/>
-                <constraint firstItem="XEW-wB-4Y8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HSx-wS-icE"/>
-                <constraint firstItem="XEW-wB-4Y8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IwJ-Lg-Hwz"/>
-                <constraint firstAttribute="bottom" secondItem="XEW-wB-4Y8" secondAttribute="bottom" id="L1X-wa-zkz"/>
-                <constraint firstAttribute="trailing" secondItem="XEW-wB-4Y8" secondAttribute="trailing" id="SAF-gr-Iy8"/>
+                <constraint firstItem="XEW-wB-4Y8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EJQ-xT-LMQ"/>
+                <constraint firstAttribute="bottom" secondItem="XEW-wB-4Y8" secondAttribute="bottom" id="MD7-iF-bEi"/>
                 <constraint firstItem="bxf-CJ-ZHu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="39" id="Srz-HB-tBc"/>
+                <constraint firstItem="XEW-wB-4Y8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="adN-dB-ncP"/>
+                <constraint firstItem="XEW-wB-4Y8" firstAttribute="centerX" secondItem="bxf-CJ-ZHu" secondAttribute="centerX" id="lUt-XL-ehb"/>
+                <constraint firstItem="XEW-wB-4Y8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="owJ-Eb-gVu"/>
+                <constraint firstAttribute="bottom" secondItem="XEW-wB-4Y8" secondAttribute="bottom" id="qUo-Q0-tkT"/>
+                <constraint firstItem="XEW-wB-4Y8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qhV-oR-WUq"/>
                 <constraint firstAttribute="bottom" secondItem="bxf-CJ-ZHu" secondAttribute="bottom" constant="13" id="ueL-uS-gfw"/>
                 <constraint firstItem="bxf-CJ-ZHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="w9O-MI-tdA"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
-            <point key="canvasLocation" x="334" y="336"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="MD7-iF-bEi"/>
+                    <exclude reference="owJ-Eb-gVu"/>
+                    <exclude reference="qhV-oR-WUq"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="128" y="304"/>
         </view>
     </objects>
 </document>

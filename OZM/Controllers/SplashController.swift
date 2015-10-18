@@ -11,12 +11,9 @@ import UIKit
 import PromiseKit
 
 class SplashController: UIViewController {
-
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         APIClient.registerDevice("test").then { _ in
-            self.performSegueWithIdentifier("proceed", sender: nil)
+            navigation.pushViewController(MainViewController(), animated: false)
         }
         .catch_ { error in
             print(error)
