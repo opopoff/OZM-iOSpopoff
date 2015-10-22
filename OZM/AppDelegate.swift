@@ -10,18 +10,34 @@ import UIKit
 import Fabric
 import Crashlytics
 
+var navigation: UINavigationController!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow!
 
     func application(
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         Fabric.with([Crashlytics.self()])
+
+        navigation = UINavigationController(rootViewController: SplashController())
+        navigation.navigationBar.barStyle = UIBarStyle.Black
+        navigation.navigationBar.translucent = true
+
+
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
+
+        UIApplication.sharedApplication().setStatusBarStyle(
+            UIStatusBarStyle.LightContent,
+            animated: false
+        )
+
         return true
     }
 

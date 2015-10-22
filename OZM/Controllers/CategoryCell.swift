@@ -11,7 +11,7 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
 
-    weak var imageView: WebImageView!
+    @IBOutlet weak var imageView: WebImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
     override func prepareForReuse() {

@@ -10,13 +10,27 @@ import Foundation
 import UIKit
 
 class CategoriesController:
-    UICollectionViewController,
-//    UICollectionViewDelegate,
-//    UICollectionViewDataSource,
+    UIViewController,
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
     private var selectedCat: Category?
     private var categories: [Category]?
+
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var searchField: UITextField!
+
+    //MARK: - Initialization
+
+    init() {
+        super.init(nibName: "CategoriesController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //MARK: - Data
 
@@ -30,7 +44,7 @@ class CategoriesController:
         }
 
         APIClient.getCategories()
-            .then  { update($0) }
+            .then { update($0) }
             .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
@@ -38,16 +52,25 @@ class CategoriesController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView?.registerNib(
+            UINib(nibName: "CategoryCell", bundle: nil),
+            forCellWithReuseIdentifier: "category"
+        )
+        searchField.attributedPlaceholder =
+            NSAttributedString(
+                string: "НАЙТИ",
+                attributes: [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
+        )
         reloadData()
     }
 
     //MARK: - Collection view stuff
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories?.count ?? 0
     }
 
@@ -56,12 +79,15 @@ class CategoriesController:
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
+        /*
         let width = (UIScreen.mainScreen().bounds.width / 2.0) - 25
         let height = width / 1.4
         return CGSize(width: width, height: height)
+        */
+        return CGSize(width: 160, height: 140)
     }
 
-    override func collectionView(
+    func collectionView(
         collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
@@ -74,17 +100,11 @@ class CategoriesController:
         return cell
     }
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let category = categories?[indexPath.row] {
-            selectedCat = category
-            performSegueWithIdentifier("show_images", sender: nil)
-        }
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let segueId = segue.identifier where segueId == "show_images" {
-            let imagesCtrl = segue.destinationViewController as! ImagesController
-            imagesCtrl.category = selectedCat
+            let imagesCtrl = ImagesController()
+            imagesCtrl.category = category
+            navigation.pushViewController(imagesCtrl, animated: true)
         }
     }
 }

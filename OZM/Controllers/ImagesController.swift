@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class ImagesController:
-    UICollectionViewController,
-//    UICollectionViewDelegate,
-//    UICollectionViewDataSource,
+    UIViewController,
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
 {
     private var images: [Image]?
@@ -22,6 +22,8 @@ class ImagesController:
             self.reloadData()
         }
     }
+
+    @IBOutlet var collectionView: UICollectionView!
 
     //MARK: - Data
 
@@ -44,6 +46,10 @@ class ImagesController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.registerNib(
+            UINib(nibName: "ImageCell", bundle: nil),
+            forCellWithReuseIdentifier: "image"
+        )
         reloadData()
     }
 
@@ -59,11 +65,11 @@ class ImagesController:
 
     //MARK: - Collection view stuff
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images?.count ?? 0
     }
 
@@ -81,13 +87,15 @@ class ImagesController:
         }
     }
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let image = images?[indexPath.row] {
             print(image.url, terminator: "")
+            let imageCtrl = ImageController(image: image)
+            navigation.pushViewController(imageCtrl, animated: true)
         }
     }
 
-    override func collectionView(
+    func collectionView(
         collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
