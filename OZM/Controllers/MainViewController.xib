@@ -113,7 +113,7 @@
                 <constraint firstAttribute="bottom" secondItem="bxf-CJ-ZHu" secondAttribute="bottom" constant="13" id="ueL-uS-gfw"/>
                 <constraint firstItem="bxf-CJ-ZHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="w9O-MI-tdA"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
