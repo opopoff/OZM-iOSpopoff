@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/JSONHelper-Swift.h</key>
 		<data>
-		5rKbju6NYpoOkx95zLvq4dg8gTw=
+		WD8wJy8UMVJzEhtFzo28USwikYw=
 		</data>
 		<key>Headers/JSONHelper.h</key>
 		<data>
@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		m2lrNrM0hAn2ZKeioQwFRy2YyTg=
+		I1WKHoUFLuCrkBiDxq2mMyjv2YY=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm.swiftdoc</key>
 		<data>
-		AAs++tEni3wZ71jWpLaekyiP7y8=
+		c7Y0Sn5KIR5JMnW083+fZrg1GS0=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm.swiftmodule</key>
 		<data>
-		bbhA1NxUXmjuuAYuszeFCdqQzJ0=
+		MJH2egY8qdExc0hvltzJAEMnWH0=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		314lknc+93uxurRHBERZTqQ7nM0=
+		F3SCf1IhWdx0zoKjyVy0pqNrWFA=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		OXJ1djRkUObxE9njTJ3p/p8jadc=
+		RoKYtbAg6DI8AjaJn4u1JXYw5K8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,7 +41,7 @@
 	<dict>
 		<key>Headers/JSONHelper-Swift.h</key>
 		<data>
-		5rKbju6NYpoOkx95zLvq4dg8gTw=
+		WD8wJy8UMVJzEhtFzo28USwikYw=
 		</data>
 		<key>Headers/JSONHelper.h</key>
 		<data>
@@ -49,19 +49,19 @@
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm.swiftdoc</key>
 		<data>
-		AAs++tEni3wZ71jWpLaekyiP7y8=
+		c7Y0Sn5KIR5JMnW083+fZrg1GS0=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm.swiftmodule</key>
 		<data>
-		bbhA1NxUXmjuuAYuszeFCdqQzJ0=
+		MJH2egY8qdExc0hvltzJAEMnWH0=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		314lknc+93uxurRHBERZTqQ7nM0=
+		F3SCf1IhWdx0zoKjyVy0pqNrWFA=
 		</data>
 		<key>Modules/JSONHelper.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		OXJ1djRkUObxE9njTJ3p/p8jadc=
+		RoKYtbAg6DI8AjaJn4u1JXYw5K8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
