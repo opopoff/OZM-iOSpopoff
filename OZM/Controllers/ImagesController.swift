@@ -23,14 +23,38 @@ class ImagesController:
         }
     }
 
+    var historyMode: Bool = false {
+        didSet {
+            if historyMode {
+                self.reloadData()
+            }
+        }
+    }
+
     @IBOutlet var collectionView: UICollectionView!
 
     //MARK: - Data
+
+    private func reloadHistory() -> Void {
+        let update: ([Image] -> Void) = { imgs in
+            self.images = imgs
+            self.collectionView?.reloadData()
+        }
+
+        APIClient.getLiked().then {
+            update($0)
+        }
+        .catch_ { print("I really should handle this: \($0.localizedDescription)") }
+    }
 
     /**
     Инициирует получение данных с сервера
     */
     private func reloadData() -> Void {
+        if self.historyMode {
+            self.reloadHistory()
+            return
+        }
 
         let update: ([Image] -> Void) = { imgs in
             self.images = imgs

@@ -18,7 +18,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var feedButton: UIButton!
 
-    var categoriesCtrl: CategoriesController!    
+    var categoriesCtrl: CategoriesController!
+    var historyCtrl: ImagesController!
 
     init() {
         super.init(nibName: "MainViewController", bundle: nil)
@@ -31,7 +32,29 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
-        scrollToPage(1, animated: false)
+
+        self.historyCtrl = ImagesController()
+        self.historyCtrl.historyMode = true
+        self.historyCtrl.view.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: self.scrollView.frame.size.width,
+            height: self.scrollView.frame.size.height
+        )
+
+        self.categoriesCtrl = CategoriesController()
+        self.categoriesCtrl.view.frame = self.scrollView.frame
+        self.categoriesCtrl.view.frame = CGRect(
+            x: self.view.frame.size.width,
+            y: 0,
+            width: self.scrollView.frame.size.width,
+            height: self.scrollView.frame.height
+        )
+        print("BEFORE: \(self.categoriesCtrl.view.frame)")
+        self.scrollView.addSubview(self.categoriesCtrl.view)
+        self.scrollView.addSubview(self.historyCtrl.view)
+        print("AFTER: \(self.categoriesCtrl.view.frame)")
+        //scrollToPage(1, animated: false)
     }
 
     override func viewDidLoad() {
@@ -43,18 +66,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
         self.scrollView.pagingEnabled = true
 
-        self.categoriesCtrl = CategoriesController()
-        self.categoriesCtrl.view.frame = CGRect(
-            x: self.categoriesCtrl.view.frame.size.width / 1.6,
-            y: 0,
-            width: self.categoriesCtrl.view.frame.size.width,
-            height: self.categoriesCtrl.view.frame.size.height
-        )
-        self.scrollView.addSubview(self.categoriesCtrl.view)
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(
-            width: self.categoriesCtrl.view.frame.size.width * 2,
-            height: self.categoriesCtrl.view.frame.size.height
+            width: self.view.frame.size.width * 2,
+            height: self.view.frame.size.height
         )
         super.viewDidLoad()
     }
@@ -97,7 +112,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let toPage = Int(
-            scrollView.contentOffset.x / self.categoriesCtrl.view.frame.size.width
+            scrollView.contentOffset.x / self.view.frame.size.width
         )
         setButtonActive(toPage)
     }
