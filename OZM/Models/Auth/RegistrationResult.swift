@@ -49,6 +49,16 @@ public struct RegistrationResult: Deserializable {
     }
 
     /**
+     Очищает сохранённый результат регистрации
+     */
+    public static func clean() -> Void {
+        Locksmith.deleteDataForUserAccount(
+            KeychainConstants.account,
+            inService: KeychainConstants.service
+        )
+    }
+
+    /**
         Сохраняет эту конкретную запись в Keychain.
         
         Возвращает true если получилось и false, если нет.

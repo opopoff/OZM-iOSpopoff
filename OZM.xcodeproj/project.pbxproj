@@ -49,6 +49,10 @@
 		4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E341BA296BB00DC15AF /* ImageCell.swift */; };
 		4FD9E9311BD8DB8200145F43 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9E9301BD8DB8200145F43 /* History.swift */; };
 		4FD9E9341BD8DBC300145F43 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9E9321BD8DB9100145F43 /* HistoryTests.swift */; };
+		4FDC76071BF0CB3A0041AEAA /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC76061BF0CB3A0041AEAA /* FeedController.swift */; };
+		4FDC76091BF0CB690041AEAA /* FeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC76081BF0CB690041AEAA /* FeedController.xib */; };
+		4FDC760B1BF0CCB10041AEAA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */; };
+		4FDC760D1BF0CCFB0041AEAA /* FeedImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC760C1BF0CCFB0041AEAA /* FeedImageCell.xib */; };
 		4FE8319D1BD2C8D800B13F5E /* ImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8319C1BD2C8D800B13F5E /* ImagesController.xib */; };
 		4FE8319F1BD2CD2700B13F5E /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8319E1BD2CD2700B13F5E /* ImageCell.xib */; };
 		4FE831A11BD3E77B00B13F5E /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE831A01BD3E77B00B13F5E /* ImageController.swift */; };
@@ -149,6 +153,10 @@
 		4FCB4E341BA296BB00DC15AF /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		4FD9E9301BD8DB8200145F43 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		4FD9E9321BD8DB9100145F43 /* HistoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
+		4FDC76061BF0CB3A0041AEAA /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		4FDC76081BF0CB690041AEAA /* FeedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedController.xib; sourceTree = "<group>"; };
+		4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
+		4FDC760C1BF0CCFB0041AEAA /* FeedImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedImageCell.xib; sourceTree = "<group>"; };
 		4FE8319C1BD2C8D800B13F5E /* ImagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesController.xib; sourceTree = "<group>"; };
 		4FE8319E1BD2CD2700B13F5E /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		4FE831A01BD3E77B00B13F5E /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
@@ -380,6 +388,10 @@
 				4FE8319E1BD2CD2700B13F5E /* ImageCell.xib */,
 				4FE831A01BD3E77B00B13F5E /* ImageController.swift */,
 				4FE831A21BD3E7DE00B13F5E /* ImageController.xib */,
+				4FDC76061BF0CB3A0041AEAA /* FeedController.swift */,
+				4FDC76081BF0CB690041AEAA /* FeedController.xib */,
+				4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */,
+				4FDC760C1BF0CCFB0041AEAA /* FeedImageCell.xib */,
 			);
 			name = UI;
 			path = Controllers;
@@ -531,6 +543,8 @@
 				4FFF9D061BCBA4580096E073 /* Info.plist in Resources */,
 				4FE8319F1BD2CD2700B13F5E /* ImageCell.xib in Resources */,
 				4F8F29811BD2B260009C2E36 /* CategoriesController.xib in Resources */,
+				4FDC76091BF0CB690041AEAA /* FeedController.xib in Resources */,
+				4FDC760D1BF0CCFB0041AEAA /* FeedImageCell.xib in Resources */,
 				4FE8319D1BD2C8D800B13F5E /* ImagesController.xib in Resources */,
 				4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */,
 				4F8F29851BD2B4A6009C2E36 /* CategoryCell.xib in Resources */,
@@ -584,6 +598,7 @@
 				4FFF9D031BCBA4580096E073 /* CGSizeExtension.swift in Sources */,
 				4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */,
 				4FF872BA1B93367F00A67EEE /* SignedAlamofire.swift in Sources */,
+				4FDC76071BF0CB3A0041AEAA /* FeedController.swift in Sources */,
 				4FE831A11BD3E77B00B13F5E /* ImageController.swift in Sources */,
 				4F1AA5DC1B84991A007C0632 /* Signatrure.swift in Sources */,
 				4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */,
@@ -598,6 +613,7 @@
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
 				4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */,
 				4FF8729E1B931E1500A67EEE /* Category.swift in Sources */,
+				4FDC760B1BF0CCB10041AEAA /* FeedImageCell.swift in Sources */,
 				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
 				4FFF9D001BCBA4580096E073 /* AnimatableImageView.swift in Sources */,
 				4F8E38381BEFB9FE0095833C /* ToJson.swift in Sources */,

@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     var categoriesCtrl: CategoriesController!
     var historyCtrl: ImagesController!
+    var feedController: FeedController!
 
     init() {
         super.init(nibName: "MainViewController", bundle: nil)
@@ -27,6 +28,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -50,15 +55,25 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             width: self.scrollView.frame.size.width,
             height: self.scrollView.frame.height
         )
-        print("BEFORE: \(self.categoriesCtrl.view.frame)")
+        self.feedController = FeedController()
+        self.feedController.view.frame = self.scrollView.frame
+        self.feedController.view.frame = CGRect(
+            x: self.view.frame.size.width * 2,
+            y: 0,
+            width: self.scrollView.frame.size.width,
+            height: self.scrollView.frame.height
+        )
         self.scrollView.addSubview(self.categoriesCtrl.view)
         self.scrollView.addSubview(self.historyCtrl.view)
-        print("AFTER: \(self.categoriesCtrl.view.frame)")
+        self.scrollView.addSubview(self.feedController.view)
         //scrollToPage(1, animated: false)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        APIClient.getFeed()
+
         self.pages.layer.cornerRadius = 18.0
         self.pages.layer.shadowColor = UIColor.blackColor().CGColor
         self.pages.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
@@ -68,10 +83,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(
-            width: self.view.frame.size.width * 2,
-            height: self.view.frame.size.height
+            width: self.scrollView.frame.size.width * 2,
+            height: 10
         )
-        super.viewDidLoad()
+
+        let statusBG = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 21))
+        statusBG.backgroundColor = UIColor.blackColor()
+        view.addSubview(statusBG)
     }
 
     @IBAction func showPage(sender: UIButton) {
@@ -99,10 +117,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func scrollToPage(index: Int, animated: Bool) {
         self.scrollView.scrollRectToVisible(
             CGRect(
-                x: self.view.frame.size.width * CGFloat(index),
+                x: self.scrollView.frame.size.width * CGFloat(index),
                 y: 0,
-                width: self.view.frame.size.width,
-                height: self.view.frame.size.height
+                width: self.scrollView.frame.size.width,
+                height: 1
             ),
             animated: animated
         )

@@ -23,20 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         Fabric.with([Crashlytics.self()])
 
-        navigation = UINavigationController(rootViewController: SplashController())
-        navigation.navigationBar.barStyle = UIBarStyle.Black
-        navigation.navigationBar.translucent = true
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
 
+        navigation = UINavigationController(rootViewController: SplashController())
+        navigation.navigationBar.barStyle = UIBarStyle.BlackOpaque
+        navigation.navigationBar.translucent = true
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
-
-        UIApplication.sharedApplication().setStatusBarStyle(
-            UIStatusBarStyle.LightContent,
-            animated: false
-        )
 
         return true
     }
