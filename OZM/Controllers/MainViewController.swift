@@ -29,6 +29,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
@@ -50,10 +54,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             width: self.scrollView.frame.size.width,
             height: self.scrollView.frame.height
         )
-        print("BEFORE: \(self.categoriesCtrl.view.frame)")
         self.scrollView.addSubview(self.categoriesCtrl.view)
         self.scrollView.addSubview(self.historyCtrl.view)
-        print("AFTER: \(self.categoriesCtrl.view.frame)")
         //scrollToPage(1, animated: false)
     }
 
@@ -71,7 +73,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             width: self.view.frame.size.width * 2,
             height: self.view.frame.size.height
         )
-        super.viewDidLoad()
+
+        let statusBG = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 21))
+        statusBG.backgroundColor = UIColor.blackColor()
+        view.addSubview(statusBG)
     }
 
     @IBAction func showPage(sender: UIButton) {

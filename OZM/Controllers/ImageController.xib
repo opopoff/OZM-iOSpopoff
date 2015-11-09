@@ -38,7 +38,7 @@
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="vY4-uh-T05"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-            <point key="canvasLocation" x="238" y="360"/>
+            <point key="canvasLocation" x="52" y="327"/>
         </view>
     </objects>
 </document>

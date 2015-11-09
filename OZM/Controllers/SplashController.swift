@@ -11,7 +11,13 @@ import UIKit
 import PromiseKit
 
 class SplashController: UIViewController {
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     override func viewDidLoad() {
+        super.viewDidLoad()
         APIClient.registerDevice("test").then { _ in
             navigation.pushViewController(MainViewController(), animated: false)
         }
