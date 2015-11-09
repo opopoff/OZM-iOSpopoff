@@ -70,8 +70,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(
-            width: self.view.frame.size.width * 2,
-            height: self.view.frame.size.height
+            width: self.scrollView.frame.size.width * 2,
+            height: 10
         )
 
         let statusBG = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 21))
@@ -104,10 +104,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func scrollToPage(index: Int, animated: Bool) {
         self.scrollView.scrollRectToVisible(
             CGRect(
-                x: self.view.frame.size.width * CGFloat(index),
+                x: self.scrollView.frame.size.width * CGFloat(index),
                 y: 0,
-                width: self.view.frame.size.width,
-                height: self.view.frame.size.height
+                width: self.scrollView.frame.size.width,
+                height: 1
             ),
             animated: animated
         )

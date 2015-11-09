@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesController" customModule="UMAD" customModuleProvider="target">
@@ -19,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="НАЙТИ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-1p-5cD">
-                    <rect key="frame" x="8" y="20" width="588" height="30"/>
+                    <rect key="frame" x="8" y="0.0" width="588" height="30"/>
                     <animations/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -30,12 +29,16 @@
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrb-rw-CqN" userLabel="separator">
-                    <rect key="frame" x="8" y="52" width="584" height="1"/>
+                    <rect key="frame" x="8" y="32" width="584" height="1"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="TF6-1S-AHV"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="584" id="VXp-wG-xaV"/>
+                    </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-AW-Q0m">
-                    <rect key="frame" x="19" y="61" width="562" height="539"/>
+                    <rect key="frame" x="19" y="41" width="562" height="559"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="7" minimumInteritemSpacing="7" id="WYa-J8-gFx">
@@ -54,22 +57,33 @@
             <animations/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Wrb-rw-CqN" secondAttribute="bottom" constant="547" id="3ML-L4-3Pt"/>
+                <constraint firstItem="Wrb-rw-CqN" firstAttribute="top" secondItem="Qql-1p-5cD" secondAttribute="bottom" constant="2" id="0IN-36-EnZ"/>
+                <constraint firstAttribute="trailing" secondItem="Qql-1p-5cD" secondAttribute="trailing" constant="4" id="5ly-GJ-K7k"/>
+                <constraint firstItem="Qql-1p-5cD" firstAttribute="leading" secondItem="lCX-Kr-MEq" secondAttribute="leading" constant="8" id="80H-3B-yU9"/>
                 <constraint firstItem="Ucb-AW-Q0m" firstAttribute="centerX" secondItem="lCX-Kr-MEq" secondAttribute="centerX" id="C83-pG-2ch"/>
-                <constraint firstItem="Qql-1p-5cD" firstAttribute="leading" secondItem="Wrb-rw-CqN" secondAttribute="leading" id="CEl-wa-Zb6"/>
-                <constraint firstItem="Qql-1p-5cD" firstAttribute="top" secondItem="lCX-Kr-MEq" secondAttribute="top" constant="20" id="E9l-dT-tna"/>
+                <constraint firstItem="Qql-1p-5cD" firstAttribute="top" secondItem="lCX-Kr-MEq" secondAttribute="top" id="CB8-0J-bwk"/>
                 <constraint firstItem="Wrb-rw-CqN" firstAttribute="centerX" secondItem="Ucb-AW-Q0m" secondAttribute="centerX" id="F10-xL-VAR"/>
                 <constraint firstAttribute="bottom" secondItem="Wrb-rw-CqN" secondAttribute="bottom" constant="547" id="HFn-Ew-hES"/>
                 <constraint firstAttribute="trailing" secondItem="Qql-1p-5cD" secondAttribute="trailing" constant="4" id="Haq-Xb-41K"/>
+                <constraint firstAttribute="trailing" secondItem="Wrb-rw-CqN" secondAttribute="trailing" constant="8" id="I90-fH-lBl"/>
                 <constraint firstItem="Ucb-AW-Q0m" firstAttribute="leading" secondItem="lCX-Kr-MEq" secondAttribute="leading" constant="19" id="OxM-QF-wjH"/>
-                <constraint firstItem="Wrb-rw-CqN" firstAttribute="leading" secondItem="lCX-Kr-MEq" secondAttribute="leadingMargin" id="We7-dD-fPl"/>
+                <constraint firstItem="Wrb-rw-CqN" firstAttribute="top" secondItem="Qql-1p-5cD" secondAttribute="bottom" constant="2" id="REC-1z-qMY"/>
                 <constraint firstAttribute="bottom" secondItem="Ucb-AW-Q0m" secondAttribute="bottom" id="eSH-k7-hlE"/>
+                <constraint firstItem="Wrb-rw-CqN" firstAttribute="leading" secondItem="lCX-Kr-MEq" secondAttribute="leading" constant="8" id="f84-VM-6ZW"/>
                 <constraint firstItem="Ucb-AW-Q0m" firstAttribute="top" secondItem="Wrb-rw-CqN" secondAttribute="bottom" constant="8" symbolic="YES" id="l3g-WW-Kdo"/>
+                <constraint firstItem="Ucb-AW-Q0m" firstAttribute="top" secondItem="Wrb-rw-CqN" secondAttribute="bottom" constant="8" id="lXe-l9-Qw2"/>
                 <constraint firstItem="Wrb-rw-CqN" firstAttribute="top" secondItem="Qql-1p-5cD" secondAttribute="bottom" constant="2" id="laf-E7-ke7"/>
+                <constraint firstItem="Wrb-rw-CqN" firstAttribute="top" secondItem="Qql-1p-5cD" secondAttribute="bottom" constant="2" id="neg-v5-wqL"/>
+                <constraint firstItem="Wrb-rw-CqN" firstAttribute="top" secondItem="Qql-1p-5cD" secondAttribute="bottom" constant="2" id="poT-v9-IhF"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="F10-xL-VAR"/>
                     <exclude reference="HFn-Ew-hES"/>
+                    <exclude reference="laf-E7-ke7"/>
+                    <exclude reference="neg-v5-wqL"/>
+                    <exclude reference="poT-v9-IhF"/>
+                    <exclude reference="l3g-WW-Kdo"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="115" y="-60"/>
