@@ -79,12 +79,9 @@ class CategoriesController:
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        /*
         let width = (UIScreen.mainScreen().bounds.width / 2.0) - 25
-        let height = width / 1.4
+        let height = width
         return CGSize(width: width, height: height)
-        */
-        return CGSize(width: 160, height: 140)
     }
 
     func collectionView(

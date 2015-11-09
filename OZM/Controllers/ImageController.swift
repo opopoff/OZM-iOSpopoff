@@ -36,6 +36,10 @@ class ImageController: UIViewController {
         self.navigationController?.navigationBarHidden = false
     }
 
+    @IBAction func fakeShare(sender: AnyObject) {
+        APIClient.likeImage(self.image)
+    }
+
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = true

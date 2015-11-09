@@ -32,6 +32,8 @@
 		4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */; };
 		4F7D18DA1B8F034300C209B5 /* KeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */; };
 		4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18DB1B8F149500C209B5 /* APIConstants.swift */; };
+		4F8E38361BEFB3A10095833C /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E38351BEFB3A10095833C /* Actions.swift */; };
+		4F8E38381BEFB9FE0095833C /* ToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E38371BEFB9FE0095833C /* ToJson.swift */; };
 		4F8F295C1BD27BE6009C2E36 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8F295A1BD27BE6009C2E36 /* Fabric.framework */; };
 		4F8F295D1BD27BE6009C2E36 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8F295B1BD27BE6009C2E36 /* Crashlytics.framework */; };
 		4F8F295F1BD29A44009C2E36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F295E1BD29A44009C2E36 /* MainViewController.swift */; };
@@ -128,6 +130,8 @@
 		4F7D18D51B8EFC6700C209B5 /* LocksmithRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocksmithRequest.swift; sourceTree = "<group>"; };
 		4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConstants.swift; sourceTree = "<group>"; };
 		4F7D18DB1B8F149500C209B5 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		4F8E38351BEFB3A10095833C /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		4F8E38371BEFB9FE0095833C /* ToJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJson.swift; sourceTree = "<group>"; };
 		4F8F295A1BD27BE6009C2E36 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4F8F295B1BD27BE6009C2E36 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4F8F295E1BD29A44009C2E36 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				4FF8729D1B931E1500A67EEE /* Category.swift */,
 				4FF872C21B93656B00A67EEE /* Image.swift */,
 				4FD9E9301BD8DB8200145F43 /* History.swift */,
+				4F8E38351BEFB3A10095833C /* Actions.swift */,
+				4F8E38371BEFB9FE0095833C /* ToJson.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,6 +592,7 @@
 				4FFF9D051BCBA4580096E073 /* ImageSourceHelpers.swift in Sources */,
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */,
+				4F8E38361BEFB3A10095833C /* Actions.swift in Sources */,
 				4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */,
 				4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */,
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
@@ -593,6 +600,7 @@
 				4FF8729E1B931E1500A67EEE /* Category.swift in Sources */,
 				4F1AA5E61B84F866007C0632 /* APIClient.swift in Sources */,
 				4FFF9D001BCBA4580096E073 /* AnimatableImageView.swift in Sources */,
+				4F8E38381BEFB9FE0095833C /* ToJson.swift in Sources */,
 				4FFF9D041BCBA4580096E073 /* Curry.swift in Sources */,
 				4FD9E9311BD8DB8200145F43 /* History.swift in Sources */,
 				4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */,
