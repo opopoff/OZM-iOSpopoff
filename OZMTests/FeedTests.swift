@@ -35,9 +35,30 @@ class FeedTests: XCTestCase {
             }
             XCTAssert(images != nil)
             for image in images! {
-                XCTAssertNil(image.id)
+                XCTAssertNotNil(image.id)
                 XCTAssertNotNil(image.url)
                 XCTAssertNotNil(image.thumbnailUrl)
+            }
+        }
+    }
+
+
+    func testFeed() {
+        let expectation = expectationWithDescription("Запрос ленты")
+
+        let gotResult = {
+            expectation.fulfill()
+        }
+
+        APIClient.getFeed().then { _ in
+            gotResult()
+        }.catch_ { error in
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(10.0) { error in
+            if let error = error {
+                XCTFail("Беда: \(error)")
             }
         }
     }

@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="imageView" destination="sRC-j9-7Qu" id="kRQ-D1-B24"/>
             </connections>
-            <point key="canvasLocation" x="475" y="336.5"/>
+            <point key="canvasLocation" x="430" y="268.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -26,6 +26,8 @@ public struct APIConstants {
 
     static let userActions = "\(baseUrl)/api/user/send/actions/"
 
+    static let feed = "\(baseUrl)/api/feed/"
+
     static func feed(id: Int) -> String {
         return "\(baseUrl)/api/feed/\(id)/"
     }

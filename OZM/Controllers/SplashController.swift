@@ -19,10 +19,15 @@ class SplashController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         APIClient.registerDevice("test").then { _ in
+            APIClient.getLiked()
+        }
+        .then { _ in
             navigation.pushViewController(MainViewController(), animated: false)
         }
         .catch_ { error in
+            RegistrationResult.clean()
             print(error)
+            self.viewDidLoad()
         }
     }
 }

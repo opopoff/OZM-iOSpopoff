@@ -13,6 +13,29 @@ import JSONHelper
 public struct APIClient {
 
     /**
+    Получение ленты переписок
+     */
+    public static func getFeed() -> Promise<[Image]> {
+        return Promise { fulfill, reject in
+            let req = signedRequest(
+                .GET,
+                URLString: APIConstants.feed
+            )
+            req.validate().responseJSON { resp in
+                print("Feed: \(resp)")
+                if let error = resp.result.error {
+                    reject(error)
+                    return
+                }
+                if let json = resp.result.value as? [JSONDictionary] {
+                    let images = json.map { Image(data: $0) }
+                    fulfill(images)
+                }
+            }
+        }
+    }
+
+    /**
     Получение фида картинок по категории
     
     - parameter category:: категория, для которой получить фид

@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     var categoriesCtrl: CategoriesController!
     var historyCtrl: ImagesController!
+    var feedController: FeedController!
 
     init() {
         super.init(nibName: "MainViewController", bundle: nil)
@@ -54,13 +55,25 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             width: self.scrollView.frame.size.width,
             height: self.scrollView.frame.height
         )
+        self.feedController = FeedController()
+        self.feedController.view.frame = self.scrollView.frame
+        self.feedController.view.frame = CGRect(
+            x: self.view.frame.size.width * 2,
+            y: 0,
+            width: self.scrollView.frame.size.width,
+            height: self.scrollView.frame.height
+        )
         self.scrollView.addSubview(self.categoriesCtrl.view)
         self.scrollView.addSubview(self.historyCtrl.view)
+        self.scrollView.addSubview(self.feedController.view)
         //scrollToPage(1, animated: false)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        APIClient.getFeed()
+
         self.pages.layer.cornerRadius = 18.0
         self.pages.layer.shadowColor = UIColor.blackColor().CGColor
         self.pages.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
