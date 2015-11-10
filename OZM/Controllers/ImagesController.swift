@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ImagesController:
-    UICollectionViewController,
+    UIViewController,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout
@@ -23,12 +23,46 @@ class ImagesController:
         }
     }
 
+    var historyMode: Bool = false {
+        didSet {
+            if historyMode {
+                self.reloadData()
+            }
+        }
+    }
+
+    @IBOutlet var collectionView: UICollectionView!
+
+    init() {
+        super.init(nibName: "ImagesController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     //MARK: - Data
+
+    private func reloadHistory() -> Void {
+        let update: ([Image] -> Void) = { imgs in
+            self.images = imgs
+            self.collectionView?.reloadData()
+        }
+
+        APIClient.getLiked().then {
+            update($0)
+        }
+        .catch_ { print("I really should handle this: \($0.localizedDescription)") }
+    }
 
     /**
     Инициирует получение данных с сервера
     */
     private func reloadData() -> Void {
+        if self.historyMode {
+            self.reloadHistory()
+            return
+        }
 
         let update: ([Image] -> Void) = { imgs in
             self.images = imgs
@@ -37,13 +71,18 @@ class ImagesController:
 
         APIClient.getFeed(category!)
             .then  { update($0) }
-            .catch { println("I really should handle this: \($0.localizedDescription)") }
+            .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
     //MARK: - View Struff
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.collectionView)
+        self.collectionView.registerNib(
+            UINib(nibName: "ImageCell", bundle: nil),
+            forCellWithReuseIdentifier: "image"
+        )
         reloadData()
     }
 
@@ -59,11 +98,11 @@ class ImagesController:
 
     //MARK: - Collection view stuff
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images?.count ?? 0
     }
 
@@ -81,13 +120,15 @@ class ImagesController:
         }
     }
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let image = images?[indexPath.row] {
-            println(image.url)
+            print(image.url, terminator: "")
+            let imageCtrl = ImageController(image: image)
+            navigation.pushViewController(imageCtrl, animated: true)
         }
     }
 
-    override func collectionView(
+    func collectionView(
         collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {

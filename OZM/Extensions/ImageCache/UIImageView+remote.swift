@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import PromiseKit
+import Alamofire
 
 var cache: [String: NSData] = [:]
 
@@ -49,7 +51,7 @@ class WebImageView: AnimatableImageView {
         }
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
-                self.animateWithImageData(data: data)
+                self.animateWithImageData(data)
                 self.show()
                 fulfill(data)
             }

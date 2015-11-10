@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONHelper
 
 /**
     Модель ответа сервера на регистрацию. 
@@ -42,9 +43,19 @@ public struct RegistrationResult: Deserializable {
                 return RegistrationResult(userKey: key, secretKey: secret)
         }
         if let error = error {
-            println(error)
+            print(error, terminator: "")
         }
         return nil
+    }
+
+    /**
+     Очищает сохранённый результат регистрации
+     */
+    public static func clean() -> Void {
+        Locksmith.deleteDataForUserAccount(
+            KeychainConstants.account,
+            inService: KeychainConstants.service
+        )
     }
 
     /**
@@ -64,7 +75,7 @@ public struct RegistrationResult: Deserializable {
                     inService: KeychainConstants.service
                 )
                 if let error = error {
-                    println(error)
+                    print(error, terminator: "")
                     return false
                 }
                 return true

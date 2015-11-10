@@ -17,7 +17,7 @@ class CategoryCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.cancelReq()
-        imageView.cleanup()
+        //imageView.cleanup()
         imageView.image = nil
     }
 

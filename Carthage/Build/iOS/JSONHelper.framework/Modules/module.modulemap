@@ -1,0 +1,10 @@
+framework module JSONHelper {
+  umbrella header "JSONHelper.h"
+
+  export *
+  module * { export * }
+}
+
+module JSONHelper.Swift {
+    header "JSONHelper-Swift.h"
+}

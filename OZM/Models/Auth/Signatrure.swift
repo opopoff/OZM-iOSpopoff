@@ -19,20 +19,20 @@ let sharedKey = "d5HjIGxYEnSH5dawbOutjOjgAWhGUlXBC6iNZnpI35eNJJpkIedp8cLuHtLeOPO
 
     Я дальше немного попишу, чтобы не сойти с ума, когда придётся это менять.
     
-    :param: url URL запроса
-    :param: body Тело запроса
-    :param: userKey "Публичный" ключ пользователя полученный при регистрации
-    :param: secret "Секретный" ключ пользователя
-    :param: timestamp Текущее время в Unixtime
+    - parameter url: URL запроса
+    - parameter body: Тело запроса
+    - parameter userKey: "Публичный" ключ пользователя полученный при регистрации
+    - parameter secret: "Секретный" ключ пользователя
+    - parameter timestamp: Текущее время в Unixtime
  */
 public func signatureFor(url: String, body: String, userKey: String, secret: String, timestamp: NSTimeInterval) -> String? {
     /** Строка, которую будем подписывать */
     let concatenation = url + body + userKey + secret + "\(Int(timestamp))"
-    var key = sharedKey.dataUsingEncoding(
+    let key = sharedKey.dataUsingEncoding(
         NSUTF8StringEncoding,
         allowLossyConversion: false
     )
-    var data = concatenation.dataUsingEncoding(
+    let data = concatenation.dataUsingEncoding(
         NSUTF8StringEncoding,
         allowLossyConversion: false
     )
@@ -50,7 +50,7 @@ public func signatureFor(url: String, body: String, userKey: String, secret: Str
         let hashData = NSData(
             bytes: signatureOut,
             length: Int(CC_SHA256_DIGEST_LENGTH)
-        ).base64EncodedDataWithOptions(.allZeros)
+        ).base64EncodedDataWithOptions([])
 
         if let hash = NSString(data: hashData, encoding: NSUTF8StringEncoding) {
             return String(hash)

@@ -8,17 +8,26 @@
 
 import Foundation
 import UIKit
+import PromiseKit
 
 class SplashController: UIViewController {
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         APIClient.registerDevice("test").then { _ in
-            self.performSegueWithIdentifier("proceed", sender: nil)
+            APIClient.getLiked()
         }
-        .catch { error in
-            println(error)
+        .then { _ in
+            navigation.pushViewController(MainViewController(), animated: false)
+        }
+        .catch_ { error in
+            RegistrationResult.clean()
+            print(error)
+            self.viewDidLoad()
         }
     }
 }

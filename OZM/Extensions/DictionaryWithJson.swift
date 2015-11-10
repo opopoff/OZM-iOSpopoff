@@ -12,11 +12,15 @@ extension Dictionary {
 
     func jsonData() -> NSData? {
         var error: NSError? = nil
-        let data = NSJSONSerialization.dataWithJSONObject(
-            self as! AnyObject,
-            options: nil,
-            error: &error
-        )
+        let data: NSData?
+        do {
+            data = try NSJSONSerialization.dataWithJSONObject(
+                        self as! AnyObject,
+                        options: [])
+        } catch let error1 as NSError {
+            error = error1
+            data = nil
+        }
         return data
     }
 }
