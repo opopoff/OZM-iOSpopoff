@@ -20,9 +20,12 @@
                     <rect key="frame" x="0.0" y="66" width="600" height="243"/>
                     <animations/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
                     <rect key="frame" x="197" y="442" width="206" height="30"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="206" id="qhs-da-U0X"/>
+                    </constraints>
                     <state key="normal" title="Fake Share"/>
                     <connections>
                         <action selector="fakeShare:" destination="-1" eventType="touchUpInside" id="YJ7-Al-hmj"/>
@@ -34,6 +37,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="p48-5K-0Oh" secondAttribute="bottom" constant="291" id="4E3-PH-xio"/>
                 <constraint firstAttribute="trailing" secondItem="p48-5K-0Oh" secondAttribute="trailing" id="GoV-1R-DkL"/>
+                <constraint firstItem="BZF-E3-cKC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="edU-Db-TUc"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qme-Yl-Vm1"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="vY4-uh-T05"/>
             </constraints>
