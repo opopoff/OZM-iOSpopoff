@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEm-8u-w73">
-                    <rect key="frame" x="55" y="13" width="490" height="579"/>
+                    <rect key="frame" x="0.0" y="13" width="600" height="579"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -31,8 +31,8 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HEm-8u-w73" secondAttribute="bottom" constant="8" id="R2R-3I-N87"/>
                 <constraint firstItem="HEm-8u-w73" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="Wja-kl-XMm"/>
-                <constraint firstItem="HEm-8u-w73" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="eDl-jd-ytP"/>
-                <constraint firstAttribute="trailing" secondItem="HEm-8u-w73" secondAttribute="trailing" constant="55" id="uOA-Am-Ta4"/>
+                <constraint firstItem="HEm-8u-w73" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eDl-jd-ytP"/>
+                <constraint firstAttribute="trailing" secondItem="HEm-8u-w73" secondAttribute="trailing" id="uOA-Am-Ta4"/>
             </constraints>
             <point key="canvasLocation" x="357" y="192"/>
         </view>

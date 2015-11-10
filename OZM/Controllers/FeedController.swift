@@ -14,6 +14,14 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
     var images: [Image] = []
     @IBOutlet weak var tableView: UITableView!
 
+    init() {
+        super.init(nibName: "FeedController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private func reloadData() -> Void {
         let update: ([Image] -> Void) = { images in
             self.images = images

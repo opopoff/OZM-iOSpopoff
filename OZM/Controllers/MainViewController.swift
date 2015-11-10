@@ -36,6 +36,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
+        if self.historyCtrl != nil {
+            return
+        }
+
         self.navigationController?.navigationBarHidden = true
 
         self.historyCtrl = ImagesController()

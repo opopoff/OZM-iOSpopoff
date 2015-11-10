@@ -19,8 +19,8 @@ class CategoriesController:
     private var categories: [Category]?
 
     @IBOutlet weak var collectionView: UICollectionView!
-
     @IBOutlet weak var searchField: UITextField!
+    var imagesController: ImagesController!
 
     //MARK: - Initialization
 
@@ -99,9 +99,9 @@ class CategoriesController:
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let category = categories?[indexPath.row] {
-            let imagesCtrl = ImagesController()
-            imagesCtrl.category = category
-            navigation.pushViewController(imagesCtrl, animated: true)
+            imagesController = ImagesController()
+            imagesController.category = category
+            navigation.pushViewController(imagesController, animated: true)
         }
     }
 }

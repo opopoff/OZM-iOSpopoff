@@ -36,7 +36,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         data.writeToFile(savePath, atomically: true)
         documentController = UIDocumentInteractionController(URL: NSURL.fileURLWithPath(savePath))
         documentController.delegate = self
-        self.fakeShare(self)
     }
 
     override func viewDidLoad() {
@@ -63,10 +62,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     }
 
     // MARK: - Document interaction stuff
-
-    func documentInteractionControllerWillPresentOpenInMenu(controller: UIDocumentInteractionController) {
-        print("Trying!")
-    }
 
     func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
         return self

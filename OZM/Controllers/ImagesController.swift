@@ -33,6 +33,14 @@ class ImagesController:
 
     @IBOutlet var collectionView: UICollectionView!
 
+    init() {
+        super.init(nibName: "ImagesController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     //MARK: - Data
 
     private func reloadHistory() -> Void {
@@ -70,6 +78,7 @@ class ImagesController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.collectionView)
         self.collectionView.registerNib(
             UINib(nibName: "ImageCell", bundle: nil),
             forCellWithReuseIdentifier: "image"
