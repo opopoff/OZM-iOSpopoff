@@ -55,11 +55,12 @@ public struct Image: Deserializable {
     public func thumbSize() -> CGSize? {
         if let
             width = thumbnailWidth,
-            height = thumbnailHeight {
-                return CGSize(
-                    width: Double(width) / 2.0,
-                    height: Double(height) / 2.0
-                )
+            height = thumbnailHeight
+        {
+            return CGSize(
+                width: Double(width) / 2.0,
+                height: Double(height) / 2.0
+            )
         }
         return nil
     }

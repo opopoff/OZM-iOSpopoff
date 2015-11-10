@@ -47,8 +47,6 @@
 		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
 		4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E321BA292FC00DC15AF /* ImagesController.swift */; };
 		4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E341BA296BB00DC15AF /* ImageCell.swift */; };
-		4FD9E9311BD8DB8200145F43 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9E9301BD8DB8200145F43 /* History.swift */; };
-		4FD9E9341BD8DBC300145F43 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9E9321BD8DB9100145F43 /* HistoryTests.swift */; };
 		4FDC76071BF0CB3A0041AEAA /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC76061BF0CB3A0041AEAA /* FeedController.swift */; };
 		4FDC76091BF0CB690041AEAA /* FeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC76081BF0CB690041AEAA /* FeedController.xib */; };
 		4FDC760B1BF0CCB10041AEAA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */; };
@@ -151,8 +149,6 @@
 		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		4FCB4E321BA292FC00DC15AF /* ImagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesController.swift; sourceTree = "<group>"; };
 		4FCB4E341BA296BB00DC15AF /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		4FD9E9301BD8DB8200145F43 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		4FD9E9321BD8DB9100145F43 /* HistoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		4FDC76061BF0CB3A0041AEAA /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		4FDC76081BF0CB690041AEAA /* FeedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedController.xib; sourceTree = "<group>"; };
 		4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
@@ -284,7 +280,6 @@
 				4FF872C01B93618D00A67EEE /* FeedTests.swift */,
 				4F1AA5CD1B849880007C0632 /* Supporting Files */,
 				4F8F29621BD29AC5009C2E36 /* MainViewControllerTests.swift */,
-				4FD9E9321BD8DB9100145F43 /* HistoryTests.swift */,
 			);
 			path = OZMTests;
 			sourceTree = "<group>";
@@ -304,7 +299,6 @@
 				4F1AA5DA1B84990F007C0632 /* Auth */,
 				4FF8729D1B931E1500A67EEE /* Category.swift */,
 				4FF872C21B93656B00A67EEE /* Image.swift */,
-				4FD9E9301BD8DB8200145F43 /* History.swift */,
 				4F8E38351BEFB3A10095833C /* Actions.swift */,
 				4F8E38371BEFB9FE0095833C /* ToJson.swift */,
 			);
@@ -618,7 +612,6 @@
 				4FFF9D001BCBA4580096E073 /* AnimatableImageView.swift in Sources */,
 				4F8E38381BEFB9FE0095833C /* ToJson.swift in Sources */,
 				4FFF9D041BCBA4580096E073 /* Curry.swift in Sources */,
-				4FD9E9311BD8DB8200145F43 /* History.swift in Sources */,
 				4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */,
 				4F157E571B9DF85400A5D417 /* UIImageView+remote.swift in Sources */,
 				4F8F295F1BD29A44009C2E36 /* MainViewController.swift in Sources */,
@@ -633,7 +626,6 @@
 			files = (
 				4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */,
 				4FF872C11B93618D00A67EEE /* FeedTests.swift in Sources */,
-				4FD9E9341BD8DBC300145F43 /* HistoryTests.swift in Sources */,
 				4F1AA5D01B849880007C0632 /* HMACTests.swift in Sources */,
 				4FF872A01B93245E00A67EEE /* CategoriesTests.swift in Sources */,
 				4F8F29631BD29AC5009C2E36 /* MainViewControllerTests.swift in Sources */,
