@@ -61,12 +61,10 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Cells count: \(self.images.count)")
         return self.images.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("Cell for row")
         let cell = tableView.dequeueReusableCellWithIdentifier("image") as! FeedImageCell
         let image = images[indexPath.row]
         cell.populateWith(image)
