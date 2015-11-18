@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F0199671BD951BD0049ED9E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0199661BD951BD0049ED9E /* Runes.framework */; };
+		4F0E79AF1BFC921200825B52 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */; };
+		4F0E79B01BFC922000825B52 /* VKSdkFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F157E571B9DF85400A5D417 /* UIImageView+remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */; };
 		4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AA5B91B849880007C0632 /* AppDelegate.swift */; };
 		4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1AA5C01B849880007C0632 /* Images.xcassets */; };
@@ -100,6 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4F0E79B01BFC922000825B52 /* VKSdkFramework.framework in CopyFiles */,
 				4F3CBAE91BCBAC6300169E94 /* PromiseKit.framework in CopyFiles */,
 				4F3CBAEA1BCBAC6300169E94 /* OMGHTTPURLRQ.framework in CopyFiles */,
 				4F3CBAEC1BCBAC6300169E94 /* JSONHelper.framework in CopyFiles */,
@@ -112,6 +115,7 @@
 
 /* Begin PBXFileReference section */
 		4F0199661BD951BD0049ED9E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
+		4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = SOURCE_ROOT; };
 		4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+remote.swift"; sourceTree = "<group>"; };
 		4F1AA5B41B849880007C0632 /* UMAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UMAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1AA5B81B849880007C0632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFF9CF31BCB7F6B0096E073 /* Runes.framework in Frameworks */,
+				4F0E79AF1BFC921200825B52 /* VKSdkFramework.framework in Frameworks */,
 				4FFF9CF11BCB7F6B0096E073 /* Alamofire.framework in Frameworks */,
 				4FFF9CF51BCB7F6B0096E073 /* OMGHTTPURLRQ.framework in Frameworks */,
 				4F3CBADE1BCBA9BB00169E94 /* PromiseKit.framework in Frameworks */,
@@ -353,6 +358,7 @@
 		4F7D18DE1B8F29FB00C209B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */,
 				4F0199661BD951BD0049ED9E /* Runes.framework */,
 				4F8F295A1BD27BE6009C2E36 /* Fabric.framework */,
 				4F8F295B1BD27BE6009C2E36 /* Crashlytics.framework */,

@@ -1,3 +1,1 @@
-
-
-pod 'Locksmith'
+pod "VK-ios-sdk"

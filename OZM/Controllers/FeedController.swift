@@ -68,8 +68,6 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("image") as! FeedImageCell
         let image = images[indexPath.row]
         cell.populateWith(image)
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
         return cell
     }
 }
