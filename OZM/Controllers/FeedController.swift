@@ -24,8 +24,9 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     private func reloadData() -> Void {
         let update: ([Image] -> Void) = { images in
+            print("Reload data")
             self.images = images
-            self.tableView!.reloadData()
+            self.tableView.reloadData()
         }
 
         APIClient.getFeed()
@@ -35,26 +36,42 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 60.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.registerNib(UINib(nibName: "FeedImageCell", bundle: nil), forCellReuseIdentifier: "image")
         self.reloadData()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view stuff
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < self.images.count {
+            if let height = self.images[indexPath.row].height {
+                return CGFloat(height)
+            }
+        }
+        return 0
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Cells count: \(self.images.count)")
         return self.images.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("Cell for row")
         let cell = tableView.dequeueReusableCellWithIdentifier("image") as! FeedImageCell
         let image = images[indexPath.row]
         cell.populateWith(image)
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
         return cell
     }
 }
