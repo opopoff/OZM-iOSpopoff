@@ -9,8 +9,11 @@
 import UIKit
 import Fabric
 import Crashlytics
+import VKSdkFramework
 
 var navigation: UINavigationController!
+
+let VK_APP_ID = "5152823"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +38,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
 
+//        let sdkInstance = VKSdk.initializeWithAppId(VK_APP_ID)
+//        sdkInstance.registerDelegate(self)
+
+//        VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { (state, error) in
+//            print("VK wakeup: \(state), \(error)")
+//        })
+
+        return true
+    }
+
+
+//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+//        VKSdk.processOpenURL(url, fromApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String)
+//        return true
+//    }
+
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        VKSdk.processOpenURL(url, fromApplication: sourceApplication)
         return true
     }
 

@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
-class FeedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol ShareDelegate {
+    func shareImage(image: Image)
+}
+
+class FeedController: UIViewController, UITableViewDataSource, UITableViewDelegate, ShareDelegate, UIDocumentInteractionControllerDelegate {
 
     var images: [Image] = []
     @IBOutlet weak var tableView: UITableView!
+    var imageController: ImageController?
 
     init() {
         super.init(nibName: "FeedController", bundle: nil)
@@ -24,8 +29,9 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     private func reloadData() -> Void {
         let update: ([Image] -> Void) = { images in
+            print("Reload data")
             self.images = images
-            self.tableView!.reloadData()
+            self.tableView.reloadData()
         }
 
         APIClient.getFeed()
@@ -35,17 +41,29 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 60.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.registerNib(UINib(nibName: "FeedImageCell", bundle: nil), forCellReuseIdentifier: "image")
         self.reloadData()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view stuff
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < self.images.count {
+            if let height = self.images[indexPath.row].height {
+                return CGFloat(height)
+            }
+        }
+        return 0
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.images.count
@@ -55,6 +73,12 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("image") as! FeedImageCell
         let image = images[indexPath.row]
         cell.populateWith(image)
+        cell.delegate = self
         return cell
+    }
+
+    func shareImage(image: Image) {
+        self.imageController = ImageController(image: image)
+        navigation.pushViewController(imageController!, animated: true)
     }
 }

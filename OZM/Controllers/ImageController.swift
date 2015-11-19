@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import VKSdkFramework
+import Crashlytics
 
-class ImageController: UIViewController, UIDocumentInteractionControllerDelegate {
+class ImageController: UIViewController, UIDocumentInteractionControllerDelegate, VKSdkUIDelegate, VKSdkDelegate {
 
     let image: Image
     @IBOutlet weak var imageView: WebImageView!
@@ -20,6 +22,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     
     init(image: Image) {
         self.image = image
+        print(image.url)
         super.init(nibName: "ImageController", bundle: nil)
     }
 
@@ -53,7 +56,16 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     @IBAction func fakeShare(sender: AnyObject) {
         APIClient.likeImage(self.image)
-        documentController.presentOptionsMenuFromRect(CGRect(), inView: self.view, animated: true)
+        self.documentController.presentOptionsMenuFromRect(CGRect(), inView: self.view, animated: true)
+    }
+
+    @IBAction func vkShare(sender: AnyObject) {
+        let sdkInstance = VKSdk.initializeWithAppId(VK_APP_ID)
+        sdkInstance.registerDelegate(self)
+        sdkInstance.uiDelegate = self
+        VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { state, error in
+            print("Implement me, maybe")
+        })
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -61,9 +73,52 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         self.navigationController?.navigationBarHidden = true
     }
 
+    // MARK: - VK stuff
+    func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
+        print("VK Result: \(result)")
+    }
+
+    func vkSdkTokenHasExpired(expiredToken: VKAccessToken!) {
+        print("Expired token: \(expiredToken)")
+    }
+
+    func vkSdkUserAuthorizationFailed() {
+        print("VK Auth failed")
+    }
+
+    func vkSdkAccessTokenUpdated(newToken: VKAccessToken!, oldToken: VKAccessToken!) {
+        print("VK token updated: \(newToken)")
+    }
+
+    func vkSdkDidDismissViewController(controller: UIViewController!) {
+    }
+
+    func vkSdkNeedCaptchaEnter(captchaError: VKError!) {
+    }
+
+    func vkSdkShouldPresentViewController(controller: UIViewController!) {
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+
+    func vkSdkWillDismissViewController(controller: UIViewController!) {
+        
+    }
+
     // MARK: - Document interaction stuff
 
     func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
         return self
+    }
+
+    func documentInteractionController(controller: UIDocumentInteractionController, willBeginSendingToApplication application: String?) {
+        print("Will begin to sending")
+    }
+
+    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
+        print("Did end sending")
+    }
+
+    func documentInteractionController(controller: UIDocumentInteractionController, canPerformAction action: Selector) -> Bool {
+        return true
     }
 }

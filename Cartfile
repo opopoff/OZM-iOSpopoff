@@ -3,3 +3,4 @@ github "Alamofire/Alamofire" ~> 3.0
 github "isair/JSONHelper"
 github "mxcl/PromiseKit" "swift-2.0-minimal-changes"
 github "thoughtbot/Runes"
+github "VKCOM/vk-ios-sdk"
