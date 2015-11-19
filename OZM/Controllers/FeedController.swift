@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
-class FeedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol ShareDelegate {
+    func shareImage(image: Image)
+}
+
+class FeedController: UIViewController, UITableViewDataSource, UITableViewDelegate, ShareDelegate, UIDocumentInteractionControllerDelegate {
 
     var images: [Image] = []
     @IBOutlet weak var tableView: UITableView!
+    var imageController: ImageController?
 
     init() {
         super.init(nibName: "FeedController", bundle: nil)
@@ -68,6 +73,13 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("image") as! FeedImageCell
         let image = images[indexPath.row]
         cell.populateWith(image)
+        cell.delegate = self
         return cell
+    }
+
+    func shareImage(image: Image) {
+        print("Share")
+        self.imageController = ImageController(image: image)
+        navigation.pushViewController(imageController!, animated: true)
     }
 }

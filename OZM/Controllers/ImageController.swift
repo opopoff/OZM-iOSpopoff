@@ -61,7 +61,9 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         let sdkInstance = VKSdk.initializeWithAppId(VK_APP_ID)
         sdkInstance.registerDelegate(self)
         sdkInstance.uiDelegate = self
-        VKSdk.authorize([VK_PER_MESSAGES])
+        VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { state, error in
+            print("Implement me, maybe")
+        })
     }
 
     override func viewWillDisappear(animated: Bool) {

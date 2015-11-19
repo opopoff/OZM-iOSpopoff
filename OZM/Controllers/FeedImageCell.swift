@@ -12,9 +12,20 @@ import UIKit
 class FeedImageCell: UITableViewCell {
     
     @IBOutlet weak var feedImage: WebImageView!
+    @IBOutlet weak var shareButton: UIButton!
+
+    var delegate: ShareDelegate?
+    var imageModel: Image?
 
     func populateWith(image: Image) -> Void {
+        self.imageModel = image
         feedImage.setImageFromUrl(image.url!)
         self.imageView?.sizeToFit()
+    }
+
+    @IBAction func share(sender: AnyObject) {
+        if let delegate = self.delegate {
+            delegate.shareImage(self.imageModel!)
+        }
     }
 }
