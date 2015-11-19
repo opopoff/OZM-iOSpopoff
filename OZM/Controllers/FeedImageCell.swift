@@ -19,7 +19,7 @@ class FeedImageCell: UITableViewCell {
 
     func populateWith(image: Image) -> Void {
         self.imageModel = image
-        feedImage.setImageFromUrl(image.url!)
+        feedImage.setImageFromUrl(self.imageModel!.url!)
         self.imageView?.sizeToFit()
     }
 
@@ -27,5 +27,10 @@ class FeedImageCell: UITableViewCell {
         if let delegate = self.delegate {
             delegate.shareImage(self.imageModel!)
         }
+    }
+
+    override func prepareForReuse() {
+        self.imageModel = nil
+        self.feedImage.clean()
     }
 }

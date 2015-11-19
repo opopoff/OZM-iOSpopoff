@@ -31,8 +31,8 @@
                         <action selector="fakeShare:" destination="-1" eventType="touchUpInside" id="YJ7-Al-hmj"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2w-cs-H3r">
-                    <rect key="frame" x="277" y="469" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2w-cs-H3r">
+                    <rect key="frame" x="277" y="480" width="46" height="30"/>
                     <animations/>
                     <state key="normal" title="VK"/>
                     <connections>
@@ -44,13 +44,15 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="p48-5K-0Oh" secondAttribute="bottom" constant="291" id="4E3-PH-xio"/>
+                <constraint firstItem="a2w-cs-H3r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GXD-Wm-aDr"/>
                 <constraint firstAttribute="trailing" secondItem="p48-5K-0Oh" secondAttribute="trailing" id="GoV-1R-DkL"/>
+                <constraint firstItem="a2w-cs-H3r" firstAttribute="top" secondItem="BZF-E3-cKC" secondAttribute="bottom" constant="8" id="byU-vi-jRJ"/>
                 <constraint firstItem="BZF-E3-cKC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="edU-Db-TUc"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qme-Yl-Vm1"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="vY4-uh-T05"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-            <point key="canvasLocation" x="52" y="327"/>
+            <point key="canvasLocation" x="422" y="375"/>
         </view>
     </objects>
 </document>

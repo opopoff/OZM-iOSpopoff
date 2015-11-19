@@ -78,7 +78,6 @@ class FeedController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func shareImage(image: Image) {
-        print("Share")
         self.imageController = ImageController(image: image)
         navigation.pushViewController(imageController!, animated: true)
     }
