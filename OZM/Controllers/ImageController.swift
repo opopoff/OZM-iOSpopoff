@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import VKSdkFramework
+import Crashlytics
 
 class ImageController: UIViewController, UIDocumentInteractionControllerDelegate, VKSdkUIDelegate, VKSdkDelegate {
 
@@ -21,6 +22,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     
     init(image: Image) {
         self.image = image
+        print(image.url)
         super.init(nibName: "ImageController", bundle: nil)
     }
 
@@ -95,7 +97,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     }
 
     func vkSdkShouldPresentViewController(controller: UIViewController!) {
-        print("SHOULD PRESENT VK CONTROLLER")
         self.presentViewController(controller, animated: true, completion: nil)
     }
 
