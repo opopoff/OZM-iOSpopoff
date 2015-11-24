@@ -14,6 +14,7 @@ import Crashlytics
 class ImageController: UIViewController, UIDocumentInteractionControllerDelegate, VKSdkUIDelegate, VKSdkDelegate {
 
     let image: Image
+    var data: NSData!
     @IBOutlet weak var imageView: WebImageView!
 
     var documentController: UIDocumentInteractionController!
@@ -35,8 +36,12 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         if let isGif = image.isGIF where isGif == true {
             ext = ".gif"
         }
-        let savePath = NSHomeDirectory().stringByAppendingString("/tmp\(ext)")
-        data.writeToFile(savePath, atomically: true)
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first! as NSString
+        let savePath = cachesPath.stringByAppendingPathComponent("tmp\(ext)")
+
+        if !data.writeToFile(savePath, atomically: true) {
+            debugPrint("Something went wrong with tmp file saving to path: \(savePath)")
+        }
         documentController = UIDocumentInteractionController(URL: NSURL.fileURLWithPath(savePath))
         documentController.delegate = self
     }
@@ -45,7 +50,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         super.viewDidLoad()
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.setImageFromUrl(image.url!).then { data in
-            self.setupDocumentController(self.image, data: data)
+            self.data = data
         }
     }
 
@@ -56,6 +61,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     @IBAction func fakeShare(sender: AnyObject) {
         APIClient.likeImage(self.image)
+        self.setupDocumentController(self.image, data: self.data)
         self.documentController.presentOptionsMenuFromRect(CGRect(), inView: self.view, animated: true)
     }
 
