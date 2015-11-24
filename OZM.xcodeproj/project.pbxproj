@@ -44,6 +44,8 @@
 		4F8F296B1BD2AAB9009C2E36 /* UMADUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F296A1BD2AAB9009C2E36 /* UMADUITests.swift */; };
 		4F8F29811BD2B260009C2E36 /* CategoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8F29801BD2B260009C2E36 /* CategoriesController.xib */; };
 		4F8F29851BD2B4A6009C2E36 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8F29841BD2B4A6009C2E36 /* CategoryCell.xib */; };
+		4FAC07DC1C045101001AAD80 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */; };
+		4FAC07DD1C04510C001AAD80 /* AlamofireImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */; };
 		4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2E1BA2150400DC15AF /* SplashController.swift */; };
 		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
@@ -102,6 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4FAC07DD1C04510C001AAD80 /* AlamofireImage.framework in CopyFiles */,
 				4F0E79B01BFC922000825B52 /* VKSdkFramework.framework in CopyFiles */,
 				4F3CBAE91BCBAC6300169E94 /* PromiseKit.framework in CopyFiles */,
 				4F3CBAEA1BCBAC6300169E94 /* OMGHTTPURLRQ.framework in CopyFiles */,
@@ -148,6 +151,7 @@
 		4F8F296C1BD2AAB9009C2E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F8F29801BD2B260009C2E36 /* CategoriesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesController.xib; sourceTree = "<group>"; };
 		4F8F29841BD2B4A6009C2E36 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		4FCB4E2E1BA2150400DC15AF /* SplashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFF9CF31BCB7F6B0096E073 /* Runes.framework in Frameworks */,
+				4FAC07DC1C045101001AAD80 /* AlamofireImage.framework in Frameworks */,
 				4F0E79AF1BFC921200825B52 /* VKSdkFramework.framework in Frameworks */,
 				4FFF9CF11BCB7F6B0096E073 /* Alamofire.framework in Frameworks */,
 				4FFF9CF51BCB7F6B0096E073 /* OMGHTTPURLRQ.framework in Frameworks */,
@@ -358,6 +363,7 @@
 		4F7D18DE1B8F29FB00C209B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */,
 				4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */,
 				4F0199661BD951BD0049ED9E /* Runes.framework */,
 				4F8F295A1BD27BE6009C2E36 /* Fabric.framework */,

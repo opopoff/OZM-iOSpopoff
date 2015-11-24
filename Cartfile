@@ -1,5 +1,5 @@
-
 github "Alamofire/Alamofire" ~> 3.0
+github "Alamofire/AlamofireImage" ~> 2.0
 github "isair/JSONHelper"
 github "mxcl/PromiseKit" "swift-2.0-minimal-changes"
 github "thoughtbot/Runes"

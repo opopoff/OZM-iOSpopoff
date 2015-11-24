@@ -65,6 +65,9 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         sdkInstance.uiDelegate = self
         VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { state, error in
             print("Implement me, maybe")
+            if state != VKAuthorizationState.Authorized {
+                VKSdk.authorize([VK_PER_MESSAGES])
+            }
         })
     }
 

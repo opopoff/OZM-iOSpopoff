@@ -10,25 +10,14 @@ import Foundation
 import UIKit
 import PromiseKit
 import Alamofire
-
-var cache: [String: NSData] = [:]
+import AlamofireImage
 
 class WebImageView: AnimatableImageView {
 
     var req: Request? = nil
 
     func clean() -> Void {
-        self.cancelReq()
-        self.hide()
-    }
-
-    /**
-    Метод для отмены текущего реквеста
-    */
-    func cancelReq() -> Void {
-        if let req = req {
-            req.cancel()
-        }
+        self.image = nil
     }
 
     func show() -> Void {
@@ -45,10 +34,6 @@ class WebImageView: AnimatableImageView {
     Метод для удобной загрузки картинок из сети
     */
     func setImageFromUrl(url: String, placeholder: String? = nil) -> Promise<NSData> {
-        if let placeholder = placeholder {
-            self.image = UIImage(named: placeholder)
-            self.show()
-        }
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
                 self.animateWithImageData(data)
@@ -56,22 +41,26 @@ class WebImageView: AnimatableImageView {
                 fulfill(data)
             }
 
-            if let data = cache[url] {
-                setImage(data)
-                return
-            }
-            self.req = request(.GET, url)
-            self.req!.response { _, _, data, error in
-                if let error = error {
-                    reject(error)
-                    return
+            let request = NSURLRequest(URL: NSURL(string: url)!)
+
+            self.af_setImageWithURLRequest(
+                request,
+                placeholderImage: placeholder != nil ? UIImage(named: placeholder!) : nil,
+                filter: nil,
+                imageTransition: .None,
+                completion: { response in
+                    if let error = response.result.error {
+                        reject(error)
+                        return
+                    }
+                    if let data = response.data {
+                        setImage(data)
+                        fulfill(data)
+                    } else {
+                        fulfill(NSData())
+                    }
                 }
-                if let data = data {
-                    cache[url] = data
-                    setImage(data)
-                    fulfill(data)
-                }
-            }
+            )
         }
     }
 }
