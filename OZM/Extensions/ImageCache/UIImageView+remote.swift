@@ -10,30 +10,44 @@ import Foundation
 import UIKit
 import PromiseKit
 import Alamofire
-import AlamofireImage
+import Haneke
 
 class WebImageView: AnimatableImageView {
 
-    var req: Request? = nil
-
     func clean() -> Void {
-        self.image = nil
+        self.hide()
     }
 
     func show() -> Void {
+        self.setAnimating(true)
         UIView.animateWithDuration(0.2) {
             self.alpha = 1.0
         }
     }
 
     func hide() -> Void {
+        self.setAnimating(false)
         self.alpha = 0.0
+    }
+
+    func setAnimating(animate: Bool) -> Void {
+        if !animate {
+            self.stopAnimatingGIF()
+        } else {
+            self.startAnimatingGIF()
+        }
     }
 
     /**
     Метод для удобной загрузки картинок из сети
     */
     func setImageFromUrl(url: String, placeholder: String? = nil) -> Promise<NSData> {
+
+        /** Увеличиваем timout для всех запросов, иначе особо жирная гифота не пролезает */
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        sessionConfig.timeoutIntervalForRequest = 30.0;
+        sessionConfig.timeoutIntervalForResource = 60.0;
+        
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
                 self.animateWithImageData(data)
@@ -41,26 +55,19 @@ class WebImageView: AnimatableImageView {
                 fulfill(data)
             }
 
-            let request = NSURLRequest(URL: NSURL(string: url)!)
-
-            self.af_setImageWithURLRequest(
-                request,
-                placeholderImage: placeholder != nil ? UIImage(named: placeholder!) : nil,
-                filter: nil,
-                imageTransition: .None,
-                completion: { response in
-                    if let error = response.result.error {
-                        reject(error)
-                        return
-                    }
-                    if let data = response.data {
-                        setImage(data)
-                        fulfill(data)
-                    } else {
-                        fulfill(NSData())
-                    }
+            Shared.dataCache.fetch(URL: NSURL(string: url)!)
+                .onSuccess { data in
+                    setImage(data)
+                    fulfill(data)
                 }
-            )
+                .onFailure { error in
+                    let err = error ?? NSError(
+                        domain: "",
+                        code: -1,
+                        userInfo: ["description": "Cache failed without error!"]
+                    )
+                    reject(err)
+                }
         }
     }
 }

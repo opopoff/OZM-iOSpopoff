@@ -16,7 +16,7 @@ class CategoryCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
+        imageView.clean()
     }
 
     func populateWith(category: Category) -> Void {
