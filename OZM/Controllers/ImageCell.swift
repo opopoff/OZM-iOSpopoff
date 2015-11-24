@@ -19,6 +19,6 @@ class ImageCell: UICollectionViewCell {
     }
 
     func populateWith(image: Image) -> Void {
-        imageView.setImageFromUrl(image.url!)
+        imageView.setImageFromUrl(image.url!, isGIF: image.isGIF ?? false)
     }
 }
