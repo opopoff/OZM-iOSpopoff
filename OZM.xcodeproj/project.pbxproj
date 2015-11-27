@@ -48,6 +48,9 @@
 		4FAC07DD1C04510C001AAD80 /* AlamofireImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4FAC07DF1C0464BB001AAD80 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC07DE1C0464BB001AAD80 /* Haneke.framework */; };
 		4FAC07E01C0464C4001AAD80 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FAC07DE1C0464BB001AAD80 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FC148551C0877F7008D4625 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4FC148501C0877F7008D4625 /* .gitkeep */; };
+		4FC148561C0877F7008D4625 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4FC148521C0877F7008D4625 /* .gitkeep */; };
+		4FC148571C0877F7008D4625 /* FMMosaicLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC148541C0877F7008D4625 /* FMMosaicLayout.m */; };
 		4FCB4E2D1BA20EFE00DC15AF /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */; };
 		4FCB4E2F1BA2150400DC15AF /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E2E1BA2150400DC15AF /* SplashController.swift */; };
 		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
@@ -120,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0199661BD951BD0049ED9E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = SOURCE_ROOT; };
 		4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = SOURCE_ROOT; };
 		4F157E561B9DF85400A5D417 /* UIImageView+remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+remote.swift"; sourceTree = "<group>"; };
@@ -156,6 +160,10 @@
 		4F8F29841BD2B4A6009C2E36 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		4FAC07DE1C0464BB001AAD80 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = SOURCE_ROOT; };
+		4FC148501C0877F7008D4625 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4FC148521C0877F7008D4625 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4FC148531C0877F7008D4625 /* FMMosaicLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMosaicLayout.h; sourceTree = "<group>"; };
+		4FC148541C0877F7008D4625 /* FMMosaicLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMMosaicLayout.m; sourceTree = "<group>"; };
 		4FCB4E2C1BA20EFE00DC15AF /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		4FCB4E2E1BA2150400DC15AF /* SplashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -189,6 +197,8 @@
 		4FFF9CFD1BCBA4580096E073 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSourceHelpers.swift; sourceTree = "<group>"; };
 		4FFF9CFE1BCBA4580096E073 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FFF9CFF1BCBA4580096E073 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		806568E8212EB9399C21D398 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F4836745C1DA7C703AA1BF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +242,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BE26741245FDC1B8CF50C57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				806568E8212EB9399C21D398 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16CD09F638A0F8E8FBFE3143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */,
+				F8F4836745C1DA7C703AA1BF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4F157E551B9DF85400A5D417 /* ImageCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +274,8 @@
 				4F1AA5CC1B849880007C0632 /* OZMTests */,
 				4F8F29691BD2AAB9009C2E36 /* UMADUITests */,
 				4F1AA5B51B849880007C0632 /* Products */,
+				16CD09F638A0F8E8FBFE3143 /* Pods */,
+				0BE26741245FDC1B8CF50C57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,6 +370,7 @@
 		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4FC1484E1C0877F7008D4625 /* FMMosaicLayout */,
 				4FFF9CF61BCBA4580096E073 /* GifuLib */,
 				4F7D18D31B8EFC6700C209B5 /* Locksmith */,
 			);
@@ -416,6 +446,33 @@
 				4F8F296C1BD2AAB9009C2E36 /* Info.plist */,
 			);
 			path = UMADUITests;
+			sourceTree = "<group>";
+		};
+		4FC1484E1C0877F7008D4625 /* FMMosaicLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4FC1484F1C0877F7008D4625 /* Assets */,
+				4FC148511C0877F7008D4625 /* Classes */,
+			);
+			path = FMMosaicLayout;
+			sourceTree = "<group>";
+		};
+		4FC1484F1C0877F7008D4625 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4FC148501C0877F7008D4625 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4FC148511C0877F7008D4625 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4FC148521C0877F7008D4625 /* .gitkeep */,
+				4FC148531C0877F7008D4625 /* FMMosaicLayout.h */,
+				4FC148541C0877F7008D4625 /* FMMosaicLayout.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		4FF872BB1B93445900A67EEE /* Extensions */ = {
@@ -555,10 +612,12 @@
 				4FFF9D061BCBA4580096E073 /* Info.plist in Resources */,
 				4FE8319F1BD2CD2700B13F5E /* ImageCell.xib in Resources */,
 				4F8F29811BD2B260009C2E36 /* CategoriesController.xib in Resources */,
+				4FC148551C0877F7008D4625 /* .gitkeep in Resources */,
 				4FDC76091BF0CB690041AEAA /* FeedController.xib in Resources */,
 				4FDC760D1BF0CCFB0041AEAA /* FeedImageCell.xib in Resources */,
 				4FE8319D1BD2C8D800B13F5E /* ImagesController.xib in Resources */,
 				4F1AA5C41B849880007C0632 /* LaunchScreen.xib in Resources */,
+				4FC148561C0877F7008D4625 /* .gitkeep in Resources */,
 				4F8F29851BD2B4A6009C2E36 /* CategoryCell.xib in Resources */,
 				4F8F29611BD29A58009C2E36 /* MainViewController.xib in Resources */,
 				4F1AA5C11B849880007C0632 /* Images.xcassets in Resources */,
@@ -616,6 +675,7 @@
 				4F7D18DC1B8F149500C209B5 /* APIConstants.swift in Sources */,
 				4FFF9D071BCBA4580096E073 /* UIImageExtension.swift in Sources */,
 				4F7D18D71B8EFC6700C209B5 /* LocksmithRequest.swift in Sources */,
+				4FC148571C0877F7008D4625 /* FMMosaicLayout.m in Sources */,
 				4FFF9D051BCBA4580096E073 /* ImageSourceHelpers.swift in Sources */,
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */,
@@ -769,6 +829,7 @@
 		};
 		4F1AA5D41B849880007C0632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -792,6 +853,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
@@ -802,6 +864,7 @@
 		};
 		4F1AA5D51B849880007C0632 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8F4836745C1DA7C703AA1BF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -825,6 +888,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
