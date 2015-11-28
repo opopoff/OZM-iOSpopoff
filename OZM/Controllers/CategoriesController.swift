@@ -45,7 +45,15 @@ class CategoriesController:
 
         APIClient.getCategories()
             .then   { update($0) }
-            .catch_ { print("I really should handle this: \($0.localizedDescription)") }
+            .catch_ { _ in
+                RegistrationResult.clean()
+                let alert = UIAlertController(
+                    title: "Что-то пошло не так",
+                    message: "Стоит перезапустить приложение, скорее всего всё станет хорошо. Извините.",
+                    preferredStyle: UIAlertControllerStyle.Alert
+                )
+                navigation.presentViewController(alert, animated: true, completion: nil)
+            }
     }
 
     //MARK: - View Struff
