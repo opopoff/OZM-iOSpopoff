@@ -30,6 +30,8 @@
 		4F3CBAEF1BCBAC6300169E94 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FFF9CEB1BCB7F6B0096E073 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F5BE2D31C09E1A000C18082 /* UIImageView+PlayGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D01C09E1A000C18082 /* UIImageView+PlayGIF.m */; };
 		4F5BE2D41C09E1A000C18082 /* YFGIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D21C09E1A000C18082 /* YFGIFImageView.m */; };
+		4F5BE2D81C09F5B000C18082 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */; };
+		4F5BE2DA1C09F5DB00C18082 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */; };
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
@@ -138,6 +140,9 @@
 		4F5BE2D01C09E1A000C18082 /* UIImageView+PlayGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PlayGIF.m"; sourceTree = "<group>"; };
 		4F5BE2D11C09E1A000C18082 /* YFGIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFGIFImageView.h; sourceTree = "<group>"; };
 		4F5BE2D21C09E1A000C18082 /* YFGIFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFGIFImageView.m; sourceTree = "<group>"; };
+		4F5BE2D61C09F5B000C18082 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
@@ -195,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5BE2DA1C09F5DB00C18082 /* ImageIO.framework in Frameworks */,
 				4FFF9CF31BCB7F6B0096E073 /* Runes.framework in Frameworks */,
 				4FAC07DC1C045101001AAD80 /* AlamofireImage.framework in Frameworks */,
 				4F0E79AF1BFC921200825B52 /* VKSdkFramework.framework in Frameworks */,
@@ -234,6 +240,7 @@
 		0BE26741245FDC1B8CF50C57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */,
 				806568E8212EB9399C21D398 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -281,9 +288,9 @@
 		4F1AA5B61B849880007C0632 /* OZM */ = {
 			isa = PBXGroup;
 			children = (
-				4FF872BB1B93445900A67EEE /* Extensions */,
 				4F7D18DE1B8F29FB00C209B5 /* Frameworks */,
 				4F7D18D81B8F033300C209B5 /* Conf */,
+				4FF872BB1B93445900A67EEE /* Extensions */,
 				4F7D18411B8EBDCB00C209B5 /* Lib */,
 				4F7E213A1B9F4695007CB0FF /* UI */,
 				4F1AA5D91B8498C9007C0632 /* Models */,
@@ -367,9 +374,19 @@
 			path = "UIImageView-PlayGIF";
 			sourceTree = "<group>";
 		};
+		4F5BE2D51C09F5B000C18082 /* LBGIFImage */ = {
+			isa = PBXGroup;
+			children = (
+				4F5BE2D61C09F5B000C18082 /* UIImage+GIF.h */,
+				4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */,
+			);
+			path = LBGIFImage;
+			sourceTree = "<group>";
+		};
 		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4F5BE2D51C09F5B000C18082 /* LBGIFImage */,
 				4F5BE2CE1C09E1A000C18082 /* UIImageView-PlayGIF */,
 				4FC1484E1C0877F7008D4625 /* FMMosaicLayout */,
 				4F7D18D31B8EFC6700C209B5 /* Locksmith */,
@@ -658,6 +675,7 @@
 				4FC148571C0877F7008D4625 /* FMMosaicLayout.m in Sources */,
 				4F5BE2D31C09E1A000C18082 /* UIImageView+PlayGIF.m in Sources */,
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
+				4F5BE2D81C09F5B000C18082 /* UIImage+GIF.m in Sources */,
 				4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */,
 				4F8E38361BEFB3A10095833C /* Actions.swift in Sources */,
 				4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */,

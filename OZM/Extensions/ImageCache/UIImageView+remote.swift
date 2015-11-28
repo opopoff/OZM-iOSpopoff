@@ -16,8 +16,6 @@ class WebImageView: UIImageView {
 
     func clean() -> Void {
         self.image = nil
-        self.gifData = nil
-        self.stopGIF()
         self.hide()
     }
 
@@ -41,15 +39,17 @@ class WebImageView: UIImageView {
         sessionConfig.timeoutIntervalForRequest = 30.0;
         sessionConfig.timeoutIntervalForResource = 60.0;
 
+        self.image = nil
+
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
-                if isGIF {
-                    self.gifData = data
-                    self.startGIF()
-                } else {
-                    self.image = UIImage(data: data)
-                }
-                self.show()
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+                    let image = UIImage.animatedGIFWithData(data)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.image = image
+                        self.show()
+                    })
+                })
                 fulfill(data)
             }
 
@@ -59,6 +59,7 @@ class WebImageView: UIImageView {
                     fulfill(data)
                 }
                 .onFailure { error in
+                    setImage(NSData())
                     let err = error ?? NSError(
                         domain: "",
                         code: -1,

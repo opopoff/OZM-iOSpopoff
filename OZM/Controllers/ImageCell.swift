@@ -14,8 +14,8 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: WebImageView!
 
     override func prepareForReuse() {
-        super.prepareForReuse()
         imageView.clean()
+        super.prepareForReuse()
     }
 
     func populateWith(image: Image) -> Void {
