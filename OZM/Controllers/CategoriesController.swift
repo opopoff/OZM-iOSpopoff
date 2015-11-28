@@ -56,10 +56,9 @@ class CategoriesController:
             UINib(nibName: "CategoryCell", bundle: nil),
             forCellWithReuseIdentifier: "category"
         )
-        searchField.attributedPlaceholder =
-            NSAttributedString(
-                string: "НАЙТИ",
-                attributes: [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
+        searchField.attributedPlaceholder = NSAttributedString(
+            string: "НАЙТИ",
+            attributes: [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
         )
         reloadData()
     }

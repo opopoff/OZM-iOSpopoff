@@ -39,15 +39,15 @@ class WebImageView: AnimatableImageView {
     }
 
     /**
-    Метод для удобной загрузки картинок из сети
-    */
+     Метод для удобной загрузки картинок из сети
+     */
     func setImageFromUrl(url: String, placeholder: String? = nil, isGIF: Bool = true) -> Promise<NSData> {
 
         /** Увеличиваем timout для всех запросов, иначе особо жирная гифота не пролезает */
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.timeoutIntervalForRequest = 30.0;
         sessionConfig.timeoutIntervalForResource = 60.0;
-        
+
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
                 if isGIF {

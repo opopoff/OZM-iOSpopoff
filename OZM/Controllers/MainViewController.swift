@@ -36,41 +36,40 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        if self.historyCtrl != nil {
+        if self.categoriesCtrl != nil {
             return
         }
-
         self.navigationController?.navigationBarHidden = true
 
-        self.historyCtrl = ImagesController()
-        self.historyCtrl.historyMode = true
-        self.historyCtrl.view.frame = CGRect(
-            x: 0,
-            y: 0,
-            width: self.scrollView.frame.size.width,
-            height: self.scrollView.frame.size.height
-        )
+//        self.historyCtrl = ImagesController()
+//        self.historyCtrl.historyMode = true
+//        self.historyCtrl.view.frame = CGRect(
+//            x: 0,
+//            y: 0,
+//            width: self.scrollView.frame.size.width,
+//            height: self.scrollView.frame.size.height
+//        )
 
         self.categoriesCtrl = CategoriesController()
         self.categoriesCtrl.view.frame = self.scrollView.frame
         self.categoriesCtrl.view.frame = CGRect(
-            x: self.view.frame.size.width,
+            //x: self.view.frame.size.width,
+            x: 0,
             y: 0,
             width: self.scrollView.frame.size.width,
             height: self.scrollView.frame.height
         )
-        self.feedController = FeedController()
-        self.feedController.view.frame = self.scrollView.frame
-        self.feedController.view.frame = CGRect(
-            x: self.view.frame.size.width * 2,
-            y: 0,
-            width: self.scrollView.frame.size.width,
-            height: self.scrollView.frame.height
-        )
+//        self.feedController = FeedController()
+//        self.feedController.view.frame = self.scrollView.frame
+//        self.feedController.view.frame = CGRect(
+//            x: self.view.frame.size.width * 2,
+//            y: 0,
+//            width: self.scrollView.frame.size.width,
+//            height: self.scrollView.frame.height
+//        )
         self.scrollView.addSubview(self.categoriesCtrl.view)
-        self.scrollView.addSubview(self.historyCtrl.view)
-        self.scrollView.addSubview(self.feedController.view)
+//        self.scrollView.addSubview(self.historyCtrl.view)
+//        self.scrollView.addSubview(self.feedController.view)
         //scrollToPage(1, animated: false)
     }
 
