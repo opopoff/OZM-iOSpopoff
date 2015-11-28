@@ -44,7 +44,7 @@ class CategoriesController:
         }
 
         APIClient.getCategories()
-            .then { update($0) }
+            .then   { update($0) }
             .catch_ { print("I really should handle this: \($0.localizedDescription)") }
     }
 
