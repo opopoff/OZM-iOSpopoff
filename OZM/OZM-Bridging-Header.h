@@ -8,3 +8,4 @@
 
 #import <CommonCrypto/CommonHMAC.h>
 #import "FMMosaicLayout.h"
+#import "UIImageView+PlayGIF.h"

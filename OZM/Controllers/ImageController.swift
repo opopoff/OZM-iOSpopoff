@@ -48,7 +48,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        //imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.setImageFromUrl(image.url!).then { data in
             self.data = data
         }

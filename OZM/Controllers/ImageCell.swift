@@ -19,7 +19,7 @@ class ImageCell: UICollectionViewCell {
     }
 
     func populateWith(image: Image) -> Void {
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        //imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.setImageFromUrl(image.url!, isGIF: image.isGIF ?? false)
     }
 }

@@ -12,30 +12,23 @@ import PromiseKit
 import Alamofire
 import Haneke
 
-class WebImageView: AnimatableImageView {
+class WebImageView: UIImageView {
 
     func clean() -> Void {
+        self.image = nil
+        self.gifData = nil
+        self.stopGIF()
         self.hide()
     }
 
     func show() -> Void {
-        self.setAnimating(true)
         UIView.animateWithDuration(0.2) {
             self.alpha = 1.0
         }
     }
 
     func hide() -> Void {
-        self.setAnimating(false)
         self.alpha = 0.0
-    }
-
-    func setAnimating(animate: Bool) -> Void {
-        if !animate {
-            self.stopAnimatingGIF()
-        } else {
-            self.startAnimatingGIF()
-        }
     }
 
     /**
@@ -51,10 +44,9 @@ class WebImageView: AnimatableImageView {
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
                 if isGIF {
-                    self.animateWithImageData(data)
+                    self.gifData = data
+                    self.startGIF()
                 } else {
-                    self.stopAnimatingGIF()
-                    self.animateWithImageData(NSData())
                     self.image = UIImage(data: data)
                 }
                 self.show()
