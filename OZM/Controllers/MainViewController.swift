@@ -86,10 +86,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.pagingEnabled = true
 
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(
-            width: self.scrollView.frame.size.width * 2,
-            height: 10
-        )
+//        self.scrollView.contentSize = CGSize(
+//            width: self.scrollView.frame.size.width,
+//            height: 10
+//        )
 
         let statusBG = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 21))
         statusBG.backgroundColor = UIColor.blackColor()
