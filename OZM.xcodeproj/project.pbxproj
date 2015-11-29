@@ -33,6 +33,8 @@
 		4F5BE2D81C09F5B000C18082 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */; };
 		4F5BE2DA1C09F5DB00C18082 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */; };
 		4F7768411C0B0FAC00EF067D /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7768401C0B0FAC00EF067D /* Pushwoosh.framework */; };
+		4F7768451C0B27C300EF067D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7768441C0B27C300EF067D /* SnapshotHelper.swift */; };
+		4F7768471C0B293000EF067D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7768461C0B293000EF067D /* CoreLocation.framework */; };
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
@@ -148,6 +150,8 @@
 		4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4F7768401C0B0FAC00EF067D /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
+		4F7768441C0B27C300EF067D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		4F7768461C0B293000EF067D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7768471C0B293000EF067D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +254,7 @@
 		0BE26741245FDC1B8CF50C57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F7768461C0B293000EF067D /* CoreLocation.framework */,
 				4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */,
 				806568E8212EB9399C21D398 /* libPods.a */,
 			);
@@ -471,6 +477,7 @@
 		4F8F29691BD2AAB9009C2E36 /* UMADUITests */ = {
 			isa = PBXGroup;
 			children = (
+				4F7768441C0B27C300EF067D /* SnapshotHelper.swift */,
 				4F8F296A1BD2AAB9009C2E36 /* UMADUITests.swift */,
 				4F8F296C1BD2AAB9009C2E36 /* Info.plist */,
 			);
@@ -773,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8F296B1BD2AAB9009C2E36 /* UMADUITests.swift in Sources */,
+				4F7768451C0B27C300EF067D /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
