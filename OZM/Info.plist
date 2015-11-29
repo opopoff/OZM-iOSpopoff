@@ -30,6 +30,14 @@
 				<string>vk5152823</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ampf07632304133cf1b89fbedf-0fe0d7ee-9680-11e5-a1ea-003e57fecdee</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>5</string>

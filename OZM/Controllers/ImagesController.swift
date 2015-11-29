@@ -79,7 +79,6 @@ class ImagesController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.collectionView)
         self.collectionView.registerNib(
             UINib(nibName: "ImageCell", bundle: nil),
             forCellWithReuseIdentifier: "image"
@@ -91,6 +90,7 @@ class ImagesController:
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false
+        Localytics.tagEvent("OPEN_FOLDER", attributes: ["OPEN_FOLDER": category?.description ?? "Unknown"])
     }
 
     override func viewWillDisappear(animated: Bool) {

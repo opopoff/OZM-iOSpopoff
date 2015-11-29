@@ -23,7 +23,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     
     init(image: Image) {
         self.image = image
-        print(image.url)
         super.init(nibName: "ImageController", bundle: nil)
     }
 
@@ -43,6 +42,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
             debugPrint("Something went wrong with tmp file saving to path: \(savePath)")
         }
         documentController = UIDocumentInteractionController(URL: NSURL.fileURLWithPath(savePath))
+        documentController.UTI = "public.image"
         documentController.delegate = self
     }
 
@@ -82,6 +82,14 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         self.navigationController?.navigationBarHidden = true
     }
 
+    // MARK: - Document interaction stuff
+
+    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
+        if let app = application {
+            Localytics.tagEvent("SHARE", attributes: ["SHARE": app])
+        }
+    }
+
     // MARK: - VK stuff
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
         print("VK Result: \(result)")
@@ -110,6 +118,5 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     }
 
     func vkSdkWillDismissViewController(controller: UIViewController!) {
-        
     }
 }

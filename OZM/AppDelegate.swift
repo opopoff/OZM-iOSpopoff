@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         Fabric.with([Crashlytics.self()])
+        Localytics.autoIntegrate(
+            "f07632304133cf1b89fbedf-0fe0d7ee-9680-11e5-a1ea-003e57fecdee",
+            launchOptions: launchOptions
+        )
+        Localytics.tagEvent("OPEN_APP", attributes: ["OPEN_APP": "direct"])
 
         UIApplication
             .sharedApplication()
@@ -49,23 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
 
-//        let sdkInstance = VKSdk.initializeWithAppId(VK_APP_ID)
-//        sdkInstance.registerDelegate(self)
-
-//        VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { (state, error) in
-//            print("VK wakeup: \(state), \(error)")
-//        })
-
         return true
     }
 
 
-//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-//        VKSdk.processOpenURL(url, fromApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String)
-//        return true
-//    }
-
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        Localytics.tagEvent("OPEN_APP", attributes: ["OPEN_APP": "url"])
         VKSdk.processOpenURL(url, fromApplication: sourceApplication)
         return true
     }
@@ -77,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
+        Localytics.tagEvent("OPEN_APP", attributes: ["OPEN_APP": "direct"])
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

@@ -81,6 +81,7 @@
 		4FFF9CF11BCB7F6B0096E073 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CE91BCB7F6B0096E073 /* Alamofire.framework */; };
 		4FFF9CF31BCB7F6B0096E073 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CEB1BCB7F6B0096E073 /* Runes.framework */; };
 		4FFF9CF51BCB7F6B0096E073 /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFF9CED1BCB7F6B0096E073 /* OMGHTTPURLRQ.framework */; };
+		B735E0181623DCBFEF7DD918 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 806568E8212EB9399C21D398 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 				4FAC07DF1C0464BB001AAD80 /* Haneke.framework in Frameworks */,
 				4F0199671BD951BD0049ED9E /* Runes.framework in Frameworks */,
 				4FFF9CF01BCB7F6B0096E073 /* JSONHelper.framework in Frameworks */,
+				B735E0181623DCBFEF7DD918 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,11 +517,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F1AA5D31B849880007C0632 /* Build configuration list for PBXNativeTarget "UMAD" */;
 			buildPhases = (
+				D444CFC636868BBEF0354D34 /* Check Pods Manifest.lock */,
 				4F1AA5B01B849880007C0632 /* Sources */,
 				4F1AA5B11B849880007C0632 /* Frameworks */,
 				4F1AA5B21B849880007C0632 /* Resources */,
 				4F7D18DD1B8F29E500C209B5 /* ShellScript */,
 				4F3CBAE81BCBABD400169E94 /* CopyFiles */,
+				9CEB0CDF34F0B77577894AAA /* Embed Pods Frameworks */,
+				E57EAAE9F1D6CAD741C4C728 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -660,6 +665,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 02f33bb39d2a006a09d97861ff20ac2e0c8ef8fe 4fe142e4841dc3dff8f5294655a645564fd397f70452779dae4f8753f20683b4";
+		};
+		9CEB0CDF34F0B77577894AAA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D444CFC636868BBEF0354D34 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E57EAAE9F1D6CAD741C4C728 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -835,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -856,7 +907,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
@@ -869,6 +920,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8F4836745C1DA7C703AA1BF /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -890,7 +942,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19eb2d72-bf7e-4645-92f1-06ae3e2e0fb0";
@@ -901,17 +953,20 @@
 		};
 		4F1AA5D71B849880007C0632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -924,12 +979,14 @@
 		4F1AA5D81B849880007C0632 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OZMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -941,7 +998,9 @@
 		};
 		4F8F29701BD2AAB9009C2E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3644CBB49619D0735F7F0748 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = UMADUITests/Info.plist;
@@ -958,6 +1017,7 @@
 		4F8F29711BD2AAB9009C2E36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				INFOPLIST_FILE = UMADUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
