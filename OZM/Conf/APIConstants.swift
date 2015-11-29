@@ -29,6 +29,8 @@ public struct APIConstants {
     static let feed = "\(baseUrl)/api/feed/"
 
     static func feed(id: Int) -> String {
-        return "\(baseUrl)/api/feed/\(id)/"
+        let url = "\(baseUrl)/api/feed/\(id)/"
+        debugPrint("FEED URL: \(url)")
+        return url
     }
 }

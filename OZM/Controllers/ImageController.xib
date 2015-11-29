@@ -20,8 +20,8 @@
                     <rect key="frame" x="0.0" y="66" width="600" height="243"/>
                     <animations/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
-                    <rect key="frame" x="175" y="440" width="250" height="60"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
+                    <rect key="frame" x="175" y="484" width="250" height="60"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="NKu-WC-dNf"/>
@@ -42,6 +42,7 @@
                 <constraint firstItem="BZF-E3-cKC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Mh-h9-tby"/>
                 <constraint firstAttribute="bottom" secondItem="p48-5K-0Oh" secondAttribute="bottom" constant="291" id="4E3-PH-xio"/>
                 <constraint firstAttribute="trailing" secondItem="p48-5K-0Oh" secondAttribute="trailing" id="GoV-1R-DkL"/>
+                <constraint firstAttribute="bottom" secondItem="BZF-E3-cKC" secondAttribute="bottom" constant="56" id="ghh-8k-wIJ"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qme-Yl-Vm1"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="vY4-uh-T05"/>
             </constraints>
