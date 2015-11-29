@@ -18,6 +18,8 @@ class SplashController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.backgroundColor = UIColor.blackColor()
         APIClient.registerDevice("test").then { _ in
             APIClient.getLiked()
         }

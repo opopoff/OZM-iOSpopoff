@@ -65,7 +65,7 @@ class CategoriesController:
             forCellWithReuseIdentifier: "category"
         )
         searchField.attributedPlaceholder = NSAttributedString(
-            string: "НАЙТИ",
+            string: "UMAD",
             attributes: [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
         )
         reloadData()
