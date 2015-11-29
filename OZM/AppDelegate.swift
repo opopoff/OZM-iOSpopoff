@@ -26,12 +26,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         Fabric.with([Crashlytics.self()])
 
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        UIApplication
+            .sharedApplication()
+            .setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
+
+        UIApplication
+            .sharedApplication()
+            .setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
 
         navigation = UINavigationController(rootViewController: SplashController())
         navigation.navigationBar.barStyle = UIBarStyle.BlackOpaque
         navigation.navigationBar.translucent = true
+
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.redColor(),
+            NSFontAttributeName: UIFont(name: "Gill Sans", size: 24)!
+        ]
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()

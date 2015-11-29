@@ -49,6 +49,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         //imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.title = image.categoryDescription
         imageView.setImageFromUrl(image.url!).then { data in
             self.data = data
         }
