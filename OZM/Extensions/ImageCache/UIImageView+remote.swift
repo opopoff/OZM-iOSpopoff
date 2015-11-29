@@ -10,25 +10,13 @@ import Foundation
 import UIKit
 import PromiseKit
 import Alamofire
+import Haneke
 
-var cache: [String: NSData] = [:]
-
-class WebImageView: AnimatableImageView {
-
-    var req: Request? = nil
+class WebImageView: UIImageView {
 
     func clean() -> Void {
-        self.cancelReq()
+        self.image = nil
         self.hide()
-    }
-
-    /**
-    Метод для отмены текущего реквеста
-    */
-    func cancelReq() -> Void {
-        if let req = req {
-            req.cancel()
-        }
     }
 
     func show() -> Void {
@@ -42,36 +30,43 @@ class WebImageView: AnimatableImageView {
     }
 
     /**
-    Метод для удобной загрузки картинок из сети
-    */
-    func setImageFromUrl(url: String, placeholder: String? = nil) -> Promise<NSData> {
-        if let placeholder = placeholder {
-            self.image = UIImage(named: placeholder)
-            self.show()
-        }
+     Метод для удобной загрузки картинок из сети
+     */
+    func setImageFromUrl(url: String, placeholder: String? = nil, isGIF: Bool = true) -> Promise<NSData> {
+
+        /** Увеличиваем timout для всех запросов, иначе особо жирная гифота не пролезает */
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        sessionConfig.timeoutIntervalForRequest = 30.0;
+        sessionConfig.timeoutIntervalForResource = 60.0;
+
+        self.image = nil
+
         return Promise { fulfill, reject in
             let setImage: (NSData -> Void) = { data in
-                self.animateWithImageData(data)
-                self.show()
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+                    let image = UIImage.animatedGIFWithData(data)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.image = image
+                        self.show()
+                    })
+                })
                 fulfill(data)
             }
 
-            if let data = cache[url] {
-                setImage(data)
-                return
-            }
-            self.req = request(.GET, url)
-            self.req!.response { _, _, data, error in
-                if let error = error {
-                    reject(error)
-                    return
-                }
-                if let data = data {
-                    cache[url] = data
+            Shared.dataCache.fetch(URL: NSURL(string: url)!)
+                .onSuccess { data in
                     setImage(data)
                     fulfill(data)
                 }
-            }
+                .onFailure { error in
+                    setImage(NSData())
+                    let err = error ?? NSError(
+                        domain: "",
+                        code: -1,
+                        userInfo: ["description": "Cache failed without error!"]
+                    )
+                    reject(err)
+                }
         }
     }
 }

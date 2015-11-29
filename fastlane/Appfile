@@ -1,4 +1,4 @@
-app_identifier "com.ozm.OZM" # The bundle identifier of your app
+app_identifier "com.umad.UMAD" # The bundle identifier of your app
 apple_id "zamesin.ivan@gmail.com" # Your Apple email address
 
 # You can uncomment any of the lines below and add your own

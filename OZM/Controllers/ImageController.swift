@@ -14,6 +14,7 @@ import Crashlytics
 class ImageController: UIViewController, UIDocumentInteractionControllerDelegate, VKSdkUIDelegate, VKSdkDelegate {
 
     let image: Image
+    var data: NSData!
     @IBOutlet weak var imageView: WebImageView!
 
     var documentController: UIDocumentInteractionController!
@@ -22,7 +23,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     
     init(image: Image) {
         self.image = image
-        print(image.url)
         super.init(nibName: "ImageController", bundle: nil)
     }
 
@@ -35,17 +35,22 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         if let isGif = image.isGIF where isGif == true {
             ext = ".gif"
         }
-        let savePath = NSHomeDirectory().stringByAppendingString("/tmp\(ext)")
-        data.writeToFile(savePath, atomically: true)
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first! as NSString
+        let savePath = cachesPath.stringByAppendingPathComponent("tmp\(ext)")
+
+        if !data.writeToFile(savePath, atomically: true) {
+            debugPrint("Something went wrong with tmp file saving to path: \(savePath)")
+        }
         documentController = UIDocumentInteractionController(URL: NSURL.fileURLWithPath(savePath))
+        documentController.UTI = "public.image"
         documentController.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.title = image.categoryDescription
         imageView.setImageFromUrl(image.url!).then { data in
-            self.setupDocumentController(self.image, data: data)
+            self.data = data
         }
     }
 
@@ -56,6 +61,7 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     @IBAction func fakeShare(sender: AnyObject) {
         APIClient.likeImage(self.image)
+        self.setupDocumentController(self.image, data: self.data)
         self.documentController.presentOptionsMenuFromRect(CGRect(), inView: self.view, animated: true)
     }
 
@@ -65,12 +71,23 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
         sdkInstance.uiDelegate = self
         VKSdk.wakeUpSession([VK_PER_MESSAGES], completeBlock: { state, error in
             print("Implement me, maybe")
+            if state != VKAuthorizationState.Authorized {
+                VKSdk.authorize([VK_PER_MESSAGES])
+            }
         })
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBarHidden = true
+    }
+
+    // MARK: - Document interaction stuff
+
+    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
+        if let app = application {
+            Localytics.tagEvent("SHARE", attributes: ["SHARE": app])
+        }
     }
 
     // MARK: - VK stuff
@@ -101,24 +118,5 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
     }
 
     func vkSdkWillDismissViewController(controller: UIViewController!) {
-        
-    }
-
-    // MARK: - Document interaction stuff
-
-    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
-        return self
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, willBeginSendingToApplication application: String?) {
-        print("Will begin to sending")
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
-        print("Did end sending")
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, canPerformAction action: Selector) -> Bool {
-        return true
     }
 }

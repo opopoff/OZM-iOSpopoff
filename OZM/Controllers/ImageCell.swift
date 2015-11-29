@@ -14,11 +14,12 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: WebImageView!
 
     override func prepareForReuse() {
-        super.prepareForReuse()
         imageView.clean()
+        super.prepareForReuse()
     }
 
     func populateWith(image: Image) -> Void {
-        imageView.setImageFromUrl(image.url!)
+        //imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.setImageFromUrl(image.url!, isGIF: image.isGIF ?? false)
     }
 }

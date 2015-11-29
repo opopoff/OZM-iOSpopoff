@@ -13,7 +13,8 @@ class ImagesController:
     UIViewController,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout
+    UICollectionViewDelegateFlowLayout,
+    FMMosaicLayoutDelegate
 {
     private var images: [Image]?
     var category: Category? {
@@ -78,17 +79,18 @@ class ImagesController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.collectionView)
         self.collectionView.registerNib(
             UINib(nibName: "ImageCell", bundle: nil),
             forCellWithReuseIdentifier: "image"
         )
+        self.collectionView.collectionViewLayout = FMMosaicLayout()
         reloadData()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false
+        Localytics.tagEvent("OPEN_FOLDER", attributes: ["OPEN_FOLDER": category?.description ?? "Unknown"])
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -97,6 +99,14 @@ class ImagesController:
     }
 
     //MARK: - Collection view stuff
+
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, numberOfColumnsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAtIndexPath indexPath: NSIndexPath!) -> FMMosaicCellSize {
+        return (indexPath.item % 2 == 0) ? FMMosaicCellSize.Big : FMMosaicCellSize.Small;
+    }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -132,8 +142,7 @@ class ImagesController:
         collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView
-            .dequeueReusableCellWithReuseIdentifier("image", forIndexPath: indexPath) as! ImageCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("image", forIndexPath: indexPath) as! ImageCell
 
         if let image = images?[indexPath.row] {
             cell.populateWith(image)

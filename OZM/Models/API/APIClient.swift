@@ -47,6 +47,7 @@ public struct APIClient {
                 URLString: APIConstants.feed(category.id ?? -1)
             )
             req.validate().responseJSON { resp in
+                debugPrint("Feed result: \(resp.result.value)")
                 if let error = resp.result.error {
                     reject(error)
                     return

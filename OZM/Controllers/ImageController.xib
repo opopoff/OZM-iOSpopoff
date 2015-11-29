@@ -16,38 +16,33 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p48-5K-0Oh" customClass="WebImageView" customModule="UMAD" customModuleProvider="target">
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="p48-5K-0Oh" customClass="WebImageView" customModule="UMAD" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="66" width="600" height="243"/>
                     <animations/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
-                    <rect key="frame" x="197" y="442" width="206" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZF-E3-cKC">
+                    <rect key="frame" x="175" y="484" width="250" height="60"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="206" id="qhs-da-U0X"/>
+                        <constraint firstAttribute="height" constant="60" id="NKu-WC-dNf"/>
+                        <constraint firstAttribute="width" constant="250" id="YVn-34-g1V"/>
                     </constraints>
-                    <state key="normal" title="Share"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                    <state key="normal" title="Поделиться" backgroundImage="ShareButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="fakeShare:" destination="-1" eventType="touchUpInside" id="YJ7-Al-hmj"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2w-cs-H3r">
-                    <rect key="frame" x="277" y="480" width="46" height="30"/>
-                    <animations/>
-                    <state key="normal" title="VK"/>
-                    <connections>
-                        <action selector="vkShare:" destination="-1" eventType="touchUpInside" id="jft-27-Ksn"/>
                     </connections>
                 </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="BZF-E3-cKC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Mh-h9-tby"/>
                 <constraint firstAttribute="bottom" secondItem="p48-5K-0Oh" secondAttribute="bottom" constant="291" id="4E3-PH-xio"/>
-                <constraint firstItem="a2w-cs-H3r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GXD-Wm-aDr"/>
                 <constraint firstAttribute="trailing" secondItem="p48-5K-0Oh" secondAttribute="trailing" id="GoV-1R-DkL"/>
-                <constraint firstItem="a2w-cs-H3r" firstAttribute="top" secondItem="BZF-E3-cKC" secondAttribute="bottom" constant="8" id="byU-vi-jRJ"/>
-                <constraint firstItem="BZF-E3-cKC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="edU-Db-TUc"/>
+                <constraint firstAttribute="bottom" secondItem="BZF-E3-cKC" secondAttribute="bottom" constant="56" id="ghh-8k-wIJ"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qme-Yl-Vm1"/>
                 <constraint firstItem="p48-5K-0Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="vY4-uh-T05"/>
             </constraints>
@@ -55,4 +50,7 @@
             <point key="canvasLocation" x="422" y="375"/>
         </view>
     </objects>
+    <resources>
+        <image name="ShareButton" width="258" height="68"/>
+    </resources>
 </document>

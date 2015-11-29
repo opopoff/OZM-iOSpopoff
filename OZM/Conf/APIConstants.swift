@@ -19,7 +19,7 @@ public struct APIConstants {
     static let defaultHeaders = ["Content-Type": "application/json"]
 
     /* Handles */
-    static let baseUrl = "http://debug.ozm.rocks"
+    static let baseUrl = "http://ozm.rocks"
     static let registration = "\(baseUrl)/api/register/"
     static let categories = "\(baseUrl)/api/categories/"
     static let liked = "\(baseUrl)/api/feed/personal/"
@@ -29,6 +29,8 @@ public struct APIConstants {
     static let feed = "\(baseUrl)/api/feed/"
 
     static func feed(id: Int) -> String {
-        return "\(baseUrl)/api/feed/\(id)/"
+        let url = "\(baseUrl)/api/feed/\(id)/"
+        debugPrint("FEED URL: \(url)")
+        return url
     }
 }
