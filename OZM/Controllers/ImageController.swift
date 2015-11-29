@@ -48,7 +48,6 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //imageView.contentMode = UIViewContentMode.ScaleAspectFit
         self.title = image.categoryDescription
         imageView.setImageFromUrl(image.url!).then { data in
             self.data = data
@@ -112,23 +111,5 @@ class ImageController: UIViewController, UIDocumentInteractionControllerDelegate
 
     func vkSdkWillDismissViewController(controller: UIViewController!) {
         
-    }
-
-    // MARK: - Document interaction stuff
-
-    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
-        return self
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, willBeginSendingToApplication application: String?) {
-        print("Will begin to sending")
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
-        print("Did end sending")
-    }
-
-    func documentInteractionController(controller: UIDocumentInteractionController, canPerformAction action: Selector) -> Bool {
-        return true
     }
 }

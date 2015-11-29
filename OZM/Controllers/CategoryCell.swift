@@ -21,6 +21,7 @@ class CategoryCell: UICollectionViewCell {
 
     func populateWith(category: Category) -> Void {
         titleLabel.text = category.description
+        titleLabel.backgroundColor = DefaultColors.randomColor()
         imageView.setImageFromUrl(category.backgroundImage!)
     }
 }

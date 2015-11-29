@@ -60,6 +60,8 @@
 		4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E301BA2172900DC15AF /* CategoryCell.swift */; };
 		4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E321BA292FC00DC15AF /* ImagesController.swift */; };
 		4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB4E341BA296BB00DC15AF /* ImageCell.swift */; };
+		4FD4AC391C0AF95D0050B970 /* DefaultColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4AC381C0AF95D0050B970 /* DefaultColors.swift */; };
+		4FD4AC3B1C0AF9E30050B970 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4AC3A1C0AF9E30050B970 /* UIColorExtension.swift */; };
 		4FDC76071BF0CB3A0041AEAA /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC76061BF0CB3A0041AEAA /* FeedController.swift */; };
 		4FDC76091BF0CB690041AEAA /* FeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC76081BF0CB690041AEAA /* FeedController.xib */; };
 		4FDC760B1BF0CCB10041AEAA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */; };
@@ -172,6 +174,8 @@
 		4FCB4E301BA2172900DC15AF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		4FCB4E321BA292FC00DC15AF /* ImagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesController.swift; sourceTree = "<group>"; };
 		4FCB4E341BA296BB00DC15AF /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		4FD4AC381C0AF95D0050B970 /* DefaultColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultColors.swift; sourceTree = "<group>"; };
+		4FD4AC3A1C0AF9E30050B970 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4FDC76061BF0CB3A0041AEAA /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		4FDC76081BF0CB690041AEAA /* FeedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedController.xib; sourceTree = "<group>"; };
 		4FDC760A1BF0CCB10041AEAA /* FeedImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 		4F7D18411B8EBDCB00C209B5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4FD4AC3A1C0AF9E30050B970 /* UIColorExtension.swift */,
 				4F5BE2D51C09F5B000C18082 /* LBGIFImage */,
 				4F5BE2CE1C09E1A000C18082 /* UIImageView-PlayGIF */,
 				4FC1484E1C0877F7008D4625 /* FMMosaicLayout */,
@@ -408,6 +413,7 @@
 			children = (
 				4F7D18D91B8F034300C209B5 /* KeychainConstants.swift */,
 				4F7D18DB1B8F149500C209B5 /* APIConstants.swift */,
+				4FD4AC381C0AF95D0050B970 /* DefaultColors.swift */,
 			);
 			path = Conf;
 			sourceTree = "<group>";
@@ -677,7 +683,9 @@
 				4FF872BF1B934F7F00A67EEE /* DictionaryWithJson.swift in Sources */,
 				4F5BE2D81C09F5B000C18082 /* UIImage+GIF.m in Sources */,
 				4FCB4E351BA296BB00DC15AF /* ImageCell.swift in Sources */,
+				4FD4AC391C0AF95D0050B970 /* DefaultColors.swift in Sources */,
 				4F8E38361BEFB3A10095833C /* Actions.swift in Sources */,
+				4FD4AC3B1C0AF9E30050B970 /* UIColorExtension.swift in Sources */,
 				4FCB4E331BA292FC00DC15AF /* ImagesController.swift in Sources */,
 				4FCB4E311BA2172900DC15AF /* CategoryCell.swift in Sources */,
 				4F1AA5BA1B849880007C0632 /* AppDelegate.swift in Sources */,
