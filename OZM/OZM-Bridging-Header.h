@@ -10,3 +10,4 @@
 #import "FMMosaicLayout.h"
 #import "UIImage+GIF.h"
 #import "Localytics.h"
+#import <Pushwoosh/PushNotificationManager.h>

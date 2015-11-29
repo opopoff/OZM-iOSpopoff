@@ -32,6 +32,7 @@
 		4F5BE2D41C09E1A000C18082 /* YFGIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D21C09E1A000C18082 /* YFGIFImageView.m */; };
 		4F5BE2D81C09F5B000C18082 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */; };
 		4F5BE2DA1C09F5DB00C18082 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */; };
+		4F7768411C0B0FAC00EF067D /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7768401C0B0FAC00EF067D /* Pushwoosh.framework */; };
 		4F7D18CE1B8ED44600C209B5 /* RegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */; };
 		4F7D18D01B8EF64F00C209B5 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */; };
 		4F7D18D61B8EFC6700C209B5 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */; };
@@ -146,6 +147,7 @@
 		4F5BE2D61C09F5B000C18082 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		4F5BE2D71C09F5B000C18082 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		4F5BE2D91C09F5DB00C18082 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		4F7768401C0B0FAC00EF067D /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
 		4F7D18CD1B8ED44600C209B5 /* RegistrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTests.swift; sourceTree = "<group>"; };
 		4F7D18CF1B8EF64F00C209B5 /* RegistrationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		4F7D18D41B8EFC6700C209B5 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				4FFF9CF11BCB7F6B0096E073 /* Alamofire.framework in Frameworks */,
 				4FFF9CF51BCB7F6B0096E073 /* OMGHTTPURLRQ.framework in Frameworks */,
 				4F3CBADE1BCBA9BB00169E94 /* PromiseKit.framework in Frameworks */,
+				4F7768411C0B0FAC00EF067D /* Pushwoosh.framework in Frameworks */,
 				4F8F295C1BD27BE6009C2E36 /* Fabric.framework in Frameworks */,
 				4F8F295D1BD27BE6009C2E36 /* Crashlytics.framework in Frameworks */,
 				4FAC07DF1C0464BB001AAD80 /* Haneke.framework in Frameworks */,
@@ -423,6 +426,7 @@
 		4F7D18DE1B8F29FB00C209B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F7768401C0B0FAC00EF067D /* Pushwoosh.framework */,
 				4FAC07DE1C0464BB001AAD80 /* Haneke.framework */,
 				4FAC07DB1C045101001AAD80 /* AlamofireImage.framework */,
 				4F0E79AE1BFC921200825B52 /* VKSdkFramework.framework */,
@@ -922,7 +926,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zamesin Ivan (V955R23HDV)";
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;

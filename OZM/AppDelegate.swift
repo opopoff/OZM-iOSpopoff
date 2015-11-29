@@ -16,7 +16,7 @@ var navigation: UINavigationController!
 let VK_APP_ID = "5152823"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PushNotificationDelegate {
 
     var window: UIWindow!
 
@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchOptions: launchOptions
         )
         Localytics.tagEvent("OPEN_APP", attributes: ["OPEN_APP": "direct"])
+
+        PushNotificationManager.pushManager().delegate = self
+        PushNotificationManager.pushManager().handlePushReceived(launchOptions)
+        PushNotificationManager.pushManager().sendAppOpen()
+        PushNotificationManager.pushManager().registerForPushNotifications()
 
         UIApplication
             .sharedApplication()
@@ -78,6 +83,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        PushNotificationManager.pushManager().handlePushRegistration(deviceToken)
+    }
+
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        PushNotificationManager.pushManager().handlePushRegistrationFailure(error)
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PushNotificationManager.pushManager().handlePushReceived(userInfo)
+    }
+
+    func onPushAccepted(pushManager: PushNotificationManager!, withNotification pushNotification: [NSObject : AnyObject]!, onStart: Bool) {
+        print("Push notification accepted: \(pushNotification)");
     }
 }
 
